@@ -1,0 +1,2 @@
+class DriverTruck < ApplicationRecord
+end

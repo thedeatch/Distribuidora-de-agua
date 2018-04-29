@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  load: 1.5
+  number_plate: MyString
+  detail: MyString
+
+two:
+  name: MyString
+  load: 1.5
+  number_plate: MyString
+  detail: MyString
