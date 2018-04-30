@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20180430023755) do
-=======
-ActiveRecord::Schema.define(version: 20180429005629) do
->>>>>>> 113b108685c3f9b1f29b365912f2a2954fb82308
+ActiveRecord::Schema.define(version: 20180430032424) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +55,15 @@ ActiveRecord::Schema.define(version: 20180429005629) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "products", force: :cascade do |t|
+    t.string "detail"
+    t.integer "price"
+    t.integer "product_number"
+    t.integer "stock"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "trucks", force: :cascade do |t|
     t.string "name"
     t.float "load"
@@ -70,4 +75,7 @@ ActiveRecord::Schema.define(version: 20180429005629) do
 
   add_foreign_key "driver_trucks", "drivers"
   add_foreign_key "driver_trucks", "trucks"
+  add_foreign_key "orders", "clients"
+  add_foreign_key "orders", "products"
+  add_foreign_key "orders", "trucks"
 end
