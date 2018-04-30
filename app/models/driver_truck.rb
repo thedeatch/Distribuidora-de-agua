@@ -1,2 +1,2 @@
-class DriverTruck < ApplicationRecord
+    class DriverTruck < ApplicationRecord
 end
