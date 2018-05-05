@@ -33,8 +33,10 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'rut_chileno'
+#gem 'rut_chileno'
 
+gem 'rut_validation'
+gem 'phonelib'
 gem 'date_validator'
 
 
