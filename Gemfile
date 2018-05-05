@@ -39,6 +39,9 @@ gem 'rut_validation'
 gem 'phonelib'
 gem 'date_validator'
 
+gem 'jquery-rails'
+
+gem 'bootstrap', '~> 4.1', '>= 4.1.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
