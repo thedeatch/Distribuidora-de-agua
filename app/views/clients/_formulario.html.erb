@@ -1,0 +1,23 @@
+<%= form_for(@client, :html => {:role => 'form'}) do |f| %>
+  <% if @client.errors.any? %>
+    <%= pluralize(@client.errors.count, "Errores") %>
+    <% @client.errors.full_messages.each do |error| %>
+      <%= error %>
+    <% end %>
+  <% end %>
+  <%= f.label :Nombre %>
+  <%= f.text_field :first_name %>
+  <%= f.label :Apellido %>
+  <%= f.text_field :last_name %>
+  <%= f.label :Correo %>
+  <%= f.text_field :email %>
+  <%= f.label :Telefono %>
+  <%= f.text_field :phone %>
+  <%= f.label :Direccion %>
+  <%= f.text_field :address %>
+  <%= f.label :RUT %>
+  <%= f.text_field :rut %>
+
+
+  <%= f.submit %>
+<% end %>
