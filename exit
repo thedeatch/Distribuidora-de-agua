@@ -1,0 +1,82 @@
+[33mcommit cc32be77cf819dc3fd297331a063b234ffa9617f[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;32morigin[m[33m)[m
+Author: Esteban Lundin <esteban.lunding@utem.cl>
+Date:   Fri May 4 14:33:38 2018 -0300
+
+    añadido framework frontend bootstrap
+    
+    Signed-off-by: Esteban Lundin <esteban.lunding@utem.cl>
+
+[33mcommit 8d22bf8721f4a216973e978bf33806bdf8f43973[m
+Author: Esteban Lundin <esteban.lunding@utem.cl>
+Date:   Thu May 3 19:09:38 2018 -0300
+
+    se añaden validaciones para las fechas de orden y de nacimiento
+    
+    Signed-off-by: Esteban Lundin <esteban.lunding@utem.cl>
+
+[33mcommit eec0752009614456081cb1f64f1ff5574e6ef844[m
+Author: Esteban Lundin <esteban.lunding@utem.cl>
+Date:   Mon Apr 30 20:40:35 2018 -0300
+
+    se añaden las gemas para validar rut y fechas y se valida drivers y trucks
+
+[33mcommit 05d76163e7427662dcdc3076effdc85cfff14b01[m
+Merge: 316a2ed 113b108
+Author: maximiliano diaz <maximilianodiazsandoval@gmail.com>
+Date:   Sun Apr 29 22:35:10 2018 -0700
+
+    se añaden los modelos client,product y order
+
+[33mcommit 316a2ede97ba8b81be4f66256c0c74a60322a949[m
+Author: maximiliano diaz <maximilianodiazsandoval@gmail.com>
+Date:   Sun Apr 29 22:20:33 2018 -0700
+
+    se añaden los modelos client,product y order
+
+[33mcommit 113b108685c3f9b1f29b365912f2a2954fb82308[m
+Author: Esteban Lundin <esteban.lunding@utem.cl>
+Date:   Mon Apr 30 00:06:17 2018 -0300
+
+    se han corregido algunos errores en las migraciones
+
+[33mcommit 7cb66d2c599b1a6cc8b2092bac518555050df435[m
+Author: Esteban Lundin <esteban.lunding@utem.cl>
+Date:   Sun Apr 29 23:09:02 2018 -0300
+
+    se han hecho algunas migraciones para corregir el modelo
+
+[33mcommit 8b314a3397092b9040c67ce08912238258a162c6[m
+Author: Esteban Lundin <esteban.lunding@utem.cl>
+Date:   Sat Apr 28 23:32:18 2018 -0300
+
+    se añaden validaciones a drivers y trucks
+
+[33mcommit 3ee19cfcc57a45fad532a945a59488c377662082[m
+Author: Esteban Lundin <esteban.lunding@utem.cl>
+Date:   Sat Apr 28 22:04:16 2018 -0300
+
+    se crean los modelos para drivers, trucks y se crean las llaves foraneas para driver_trucks
+
+[33mcommit b43a746a5dd0f47962b57c42eee8ab787c6b2307[m
+Author: Esteban Lundin <esteban.lunding@utem.cl>
+Date:   Mon Apr 23 20:43:45 2018 -0300
+
+    cambio de gestor a postgresql
+
+[33mcommit 9f4b95f3fec1f7b86375152e6fb329e606b88772[m
+Author: Esteban Lundin <esteban.lunding@utem.cl>
+Date:   Mon Apr 16 23:31:38 2018 -0300
+
+    creacion del modelo E-R para la base de datos
+
+[33mcommit ac80c08ee198c1d60d76f9e1f60a45048bd46cce[m
+Author: maximiliano diaz <maximilianodiazsandoval@gmail.com>
+Date:   Sat Apr 7 12:00:07 2018 -0700
+
+    Los archivos para empezar a trabajar con el proyecto
+
+[33mcommit 9157c861c1afd3be289ffbd9978dccaacfa50116[m
+Author: maximiliano diaz <maximilianodiazsandoval@gmail.com>
+Date:   Sat Apr 7 11:53:28 2018 -0700
+
+    Se sube a github el nombre del proyecto distribuidora de agua
