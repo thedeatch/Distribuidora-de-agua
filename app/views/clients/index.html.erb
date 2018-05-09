@@ -1,15 +1,25 @@
-<% @clients.each do |client| %>
-  Nombres <%= client.first_name %>
-  Apellidos <%= client.last_name %>
-  Rut <%= client.rut %>
-  Email <%= client.email %>
-  Telefono <%= client.phone%>
-  Direccion <%= client.address%>
+<%= render 'shared/nav'%>
+<html>
+  <body>
 
-  <%=link_to 'Mostrar', cliente_url(client) %>
-  <%= link_to 'Editar', editar_cliente_url(client) %>
-   <%= link_to 'Eliminar', cliente_path(client),
-                method: :delete,
-                data: {confirm: '¿Estas seguro?'} %>
-  <br>
+
+    <% @clients.each do |client| %>
+    Nombres <%= client.first_name %>
+    Apellidos <%= client.last_name %>
+    Rut <%= client.rut %>
+    Email <%= client.email %>
+    Telefono <%= client.phone%>
+    Direccion <%= client.address%>
+
+    <%=link_to 'Mostrar', client_path(client) %>
+    <%= link_to 'Editar', edit_client_path(client) %>
+    <%= link_to 'Eliminar', client_path(client),
+    method: :delete,
+    data: {confirm: '¿Estas seguro?'} %>
+    <% render 'footer'%>
+    <br>
+  </body>
+
+</html>
+
 <%end %>
