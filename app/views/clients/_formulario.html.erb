@@ -1,23 +1,27 @@
-<%= form_for(@client, :html => {:role => 'form'}) do |f| %>
+
+<body>
+  <%= form_for(@client) do |f| %>
   <% if @client.errors.any? %>
-    <%= pluralize(@client.errors.count, "Errores") %>
-    <% @client.errors.full_messages.each do |error| %>
-      <%= error %>
-    <% end %>
+  <%= pluralize(@client.errors.count, "Errores") %>
+  <% @client.errors.full_messages.each do |error| %>
+  <%= error %>
+  <% end %>
   <% end %>
   <%= f.label :Nombre %>
-  <%= f.text_field :first_name %>
+  <%= f.text_field :first_name, class: 'form-control' %>
   <%= f.label :Apellido %>
-  <%= f.text_field :last_name %>
+  <%= f.text_field :last_name, class: 'form-control' %>
   <%= f.label :Correo %>
-  <%= f.text_field :email %>
+  <%= f.text_field :email, class: 'form-control' %>
   <%= f.label :Telefono %>
-  <%= f.text_field :phone %>
+  <%= f.text_field :phone, class: 'form-control' %>
   <%= f.label :Direccion %>
-  <%= f.text_field :address %>
+  <%= f.text_field :address, class: 'form-control' %>
   <%= f.label :RUT %>
-  <%= f.text_field :rut %>
+  <%= f.text_field :rut, class: 'form-control' %>
 
 
-  <%= f.submit %>
-<% end %>
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+  <% end %>
+
+</body>
