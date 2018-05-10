@@ -39,6 +39,7 @@ gem 'rut_validation'
 gem 'phonelib'
 gem 'date_validator'
 
+
 gem 'jquery-rails'
 
 gem 'bootstrap', '~> 4.1', '>= 4.1.1'

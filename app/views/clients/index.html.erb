@@ -1,25 +1,47 @@
 <%= render 'shared/nav'%>
 <html>
+  <head>
+    <meta charset="UTF-8">
+  </head>
   <body>
+    <div class="container">
+    <h2>Clientes</h2>
+
+    <div class="table-responsive-md">
+    <table class="table table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>RUT</th>
+          <th>Email</th>
+          <th>Teléfono</th>
+          <th>Dirección</th>
+          <th>Opciones</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <% @clients.each do |client| %>
+          <tr>
+            <td><%= client.first_name %></td>
+            <td><%= client.last_name %></td>
+            <td><%= client.rut %></td>
+            <td><%= client.email %></td>
+            <td><%= client.phone%></td>
+            <td><%= client.address%></td>
+            <td><%=link_to 'Mostrar', client_path(client) %>
+                <%= link_to 'Editar', edit_client_path(client) %>
+                <%= link_to 'Eliminar', client_path(client),
+                          method: :delete,
+                          data: {confirm: '¿Estas seguro?'} %></td>
 
 
-    <% @clients.each do |client| %>
-    Nombres <%= client.first_name %>
-    Apellidos <%= client.last_name %>
-    Rut <%= client.rut %>
-    Email <%= client.email %>
-    Telefono <%= client.phone%>
-    Direccion <%= client.address%>
-
-    <%=link_to 'Mostrar', client_path(client) %>
-    <%= link_to 'Editar', edit_client_path(client) %>
-    <%= link_to 'Eliminar', client_path(client),
-    method: :delete,
-    data: {confirm: '¿Estas seguro?'} %>
-    <% render 'footer'%>
-    <br>
+          </tr>
+          <%end %>
+      </tbody>
+    </table>
+    </div>
+  </div>
   </body>
-
 </html>
-
-<%end %>
