@@ -1,32 +1,30 @@
 
-<body>
-  <div class="container">
-    <h2>Ingrese datos</h2>
-    <form action="/clients">
-      <div class="form-group">
-        <%= form_for(@client) do |f| %>
-        <% if @client.errors.any? %>
-        <%= pluralize(@client.errors.count, "Errores") %>
-        <% @client.errors.full_messages.each do |error| %>
-        <%= error %>
-        <% end %>
-        <% end %>
-        <%= f.label :Nombre %>
-        <%= f.text_field :first_name, class: 'form-control' %>
-        <%= f.label :Apellido %>
-        <%= f.text_field :last_name, class: 'form-control' %>
-        <%= f.label :Correo %>
-        <%= f.text_field :email, class: 'form-control' %>
-        <%= f.label :Telefono %>
-        <%= f.text_field :phone, class: 'form-control' %>
-        <%= f.label :Direccion %>
-        <%= f.text_field :address, class: 'form-control' %>
-        <%= f.label :RUT %>
-        <%= f.text_field :rut, class: 'form-control' %>
-      </div>
-        <%= f.submit "Aceptar", class: "btn btn-primary"%>
 
+<body>
+  <h2>Ingrese datos</h2>
+  <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <%= form_for(@client) do |f| %>
+          <% if @client.errors.any? %>
+          <%= pluralize(@client.errors.count, "Errores") %>
+          <% @client.errors.full_messages.each do |error| %>
+          <%= error %>
+          <% end %>
+          <% end %>
+          <%= f.label :Nombre %>
+          <%= f.text_field :first_name, class: 'form-control' %>
+          <%= f.label :Apellido %>
+          <%= f.text_field :last_name, class: 'form-control' %>
+          <%= f.label :Correo %>
+          <%= f.email_field :email, class: 'form-control' %>
+          <%= f.label :Telefono %>
+          <%= f.text_field :phone, class: 'form-control' %>
+          <%= f.label :Direccion %>
+          <%= f.text_field :address, class: 'form-control' %>
+          <%= f.label :RUT %>
+          <%= f.text_field :rut, class: 'form-control' %>
+          <%= f.submit "Guardar", class: "btn btn-primary"%>
         <% end %>
-    </form>
+      </div>
   </div>
 </body>
