@@ -1,3 +1,41 @@
-<h1> Ordenes </h1>
 
-<%= link_to "ingrese las fechas de la orden del producto", new_order_path %>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <div class="container">
+    <h2>Ordenes</h2>
+
+    <div class="table-responsive-md">
+    <table class="table table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th>Numero</th>
+          <th>Fecha Orden</th>
+          <th>Fecha Entrega</th>
+          <th>Cantidad</th>
+          <th>id Cliente</th>
+          <th>id Camion</th>
+          <th>id Producto</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <% @orders.each do |order| %>
+          <tr>
+            <td><%= order.order_date %></td>
+            <td><%= order.delivery_date %></td>
+            <td><%= order.amount %></td>
+            <td><%= order.client_id %></td>
+            <td><%= order.truck_id%></td>
+            <td><%= order.product_id%></td>
+
+          </tr>
+          <% end %>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  </body>
+</html>

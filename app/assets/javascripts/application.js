@@ -15,3 +15,7 @@
 //= require_tree .
 //= require jquery
 //= require bootstrap-sprockets
+//= require turbolinks
+
+// esto es para que los dropdowns del navbar funcionen correctamente
+$('.dropdown-toggle').dropdown();

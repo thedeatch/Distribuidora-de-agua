@@ -1,0 +1,31 @@
+
+<body>
+  <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <%= form_for(@order) do |f| %>
+          <% if @order.errors.any? %>
+            <%= pluralize(@order.errors.count, "Errores") %>
+            <% @order.errors.full_messages.each do |error| %>
+              <%= error %>
+            <% end %>
+          <% end %>
+          <p>
+          <%= f.label :Fecha_de_Orden %>
+          <%= f.text_field :order_date, class: 'form-control' %>
+          </p>
+          <p>
+          <%= f.label :fecha_de_entrega %>
+          <%= f.text_field :delivery_date, class: 'form-control' %>
+          </p>
+          <p>
+          <%= f.label :Cantidad %>
+          <%= f.text_field :amount, class: 'form-control' %>
+          </p>
+          <p>
+          <%= f.submit "Aceptar", class: "btn btn-primary" %>
+          </p>
+        <% end %>
+
+      </div>
+  </div>
+</body>

@@ -1,29 +1,42 @@
 
 
 <body>
-  <h2>Ingrese datos</h2>
   <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <%= form_for(@client) do |f| %>
           <% if @client.errors.any? %>
-          <%= pluralize(@client.errors.count, "Errores") %>
-          <% @client.errors.full_messages.each do |error| %>
-          <%= error %>
+            <%= pluralize(@client.errors.count, "Errores") %>
+            <% @client.errors.full_messages.each do |error| %>
+              <%= error %>
+            <% end %>
           <% end %>
-          <% end %>
+          <p>
           <%= f.label :Nombre %>
           <%= f.text_field :first_name, class: 'form-control' %>
+          </p>
+          <p>
           <%= f.label :Apellido %>
           <%= f.text_field :last_name, class: 'form-control' %>
+          </p>
+          <p>
           <%= f.label :Correo %>
           <%= f.email_field :email, class: 'form-control' %>
+          </p>
+          <p>
           <%= f.label :Telefono %>
           <%= f.text_field :phone, class: 'form-control' %>
+          </p>
+          <p>
           <%= f.label :Direccion %>
           <%= f.text_field :address, class: 'form-control' %>
+          </p>
+          <p>
           <%= f.label :RUT %>
           <%= f.text_field :rut, class: 'form-control' %>
+          </p>
+          <p>
           <%= f.submit "Guardar", class: "btn btn-primary"%>
+          </p>
         <% end %>
       </div>
   </div>
