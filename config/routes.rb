@@ -29,5 +29,16 @@ Rails.application.routes.draw do
   delete '/orders/:id', to: 'orders#destroy'
 
   resources :orders
+
+  get '/products', to: 'products#index', as: 'product'
+  get '/products/new', to: 'products#new', as: 'new_product'
+  get '/products/:id', to: 'products#show'
+  post '/products', to: 'products#create', as: 'create_product'
+  get '/products/:id/edit', to: 'products#edit', as: 'edit_product'
+  put '/products/:id', to: 'products#update'
+  patch '/products/:id', to: 'products#update', as: 'update_product'
+  delete '/products/:id', to: 'products#destroy'
+
+  resources :products
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

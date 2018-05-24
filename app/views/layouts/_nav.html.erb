@@ -19,10 +19,17 @@
           </ul>
         </li>
         <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Ordenes <span class="caret"></span></a>
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Órdenes <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a><%= link_to "Ver ordenes", order_path%></a></li>
             <li><a><%= link_to "Crear Orden", new_order_url%></a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Productos <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a><%= link_to "Ver productos", product_path%></a></li>
+            <li><a><%= link_to "Agregar producto", new_product_url%></a></li>
           </ul>
         </li>
       </ul>
