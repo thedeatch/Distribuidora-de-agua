@@ -1,0 +1,47 @@
+<%= render 'shared/nav'%>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <div class="container">
+    <h2>Conductores</h2>
+
+    <div class="table-responsive-md">
+    <table class="table table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>RUT</th>
+          <th>Sueldo</th>
+          <th>Vigencia</th>
+          <th>Fecha de nacimiento</th>
+          <th>Opciones</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <% @drivers.each do |driver| %>
+          <tr>
+            <td><%= driver.first_name %></td>
+            <td><%= driver.last_name %></td>
+            <td><%= driver.rut %></td>
+            <td><%= driver.income %></td>
+            <td><%= driver.license%></td>
+            <td><%= driver.birthday%></td>
+            <td><%=link_to 'Mostrar', driver_path(driver) %>
+                <%= link_to 'Editar', edit_driver_path(driver) %>
+                <%= link_to 'Eliminar', driver_path(driver),
+                          method: :delete,
+                          data: {confirm: '¿Estas seguro?'} %></td>
+
+
+          </tr>
+          <%end %>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  </body>
+</html>

@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+
+
+  get '/drivers', to: 'drivers#index', as: 'driver'
+  get '/drivers/new', to: 'drivers#new'
+  get '/drivers/:id', to: 'drivers#show'
+  post '/drivers', to: 'drivers#create', as: 'create_driver'
+  get '/drivers/:id/edit', to: 'drivers#edit', as: 'edit_driver'
+  put '/drivers/:id', to: 'drivers#update'
+  patch '/drivers/:id', to: 'drivers#update'
+  delete '/drivers/:id', to: 'drivers#destroy'
+
+
   #get 'welcome/index'
 
   #root 'welcome#index'
