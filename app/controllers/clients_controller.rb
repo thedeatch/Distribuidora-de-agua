@@ -13,7 +13,7 @@ class ClientsController < ApplicationController
     end
 
     def create
-      @client = Client.create(client_params)
+      @client = Client.new(client_params)
       if @client.save
         flash[:success] = "Cliente exitosamente agregado"
         redirect_to @client

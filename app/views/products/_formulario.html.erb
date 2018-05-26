@@ -1,0 +1,39 @@
+
+<body>
+  <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <%= form_for(@product) do |f| %>
+          <% if @product.errors.any? %>
+            <%= pluralize(@product.errors.count, "Errores") %>
+            <% @product.errors.full_messages.each do |error| %>
+              <%= error %>
+            <% end %>
+          <% end %>
+          <p>
+          <%= f.label :Litros %>
+          <%= f.text_field :liters, class: 'form-control' %>
+          </p>
+          <p>
+          <%= f.label :Precio %>
+          <%= f.text_field :price, class: 'form-control' %>
+          </p>
+          <p>
+          <%= f.label :Código_de_producto %>
+          <%= f.text_field :product_number, class: 'form-control' %>
+          </p>
+          <p>
+          <%= f.label :Disponibilidad %>
+          <%= f.text_field :stock, class: 'form-control' %>
+          </p>
+          <p>
+          <%= f.label :Detalles %>
+          <%= f.text_field :detail, class: 'form-control' %>
+          </p>
+          <p>
+          <%= f.submit "Aceptar", class: "btn btn-primary" %>
+          </p>
+        <% end %>
+
+      </div>
+  </div>
+</body>
