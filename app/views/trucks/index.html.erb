@@ -1,4 +1,4 @@
-<% provide(:title, "Productos") %>
+<% provide(:title, "Camiones") %>
 <html>
   <head>
     <meta charset="UTF-8">
@@ -6,16 +6,15 @@
   <body>
     <div class="container">
     <p>
-    <h1>Productos</h1>
+    <h1>Camiones</h1>
     </p>
     <div class="table-responsive-md">
     <table class="table table-striped">
       <thead class="thead-dark">
         <tr>
-          <th>Litros</th>
-          <th>Precio</th>
-          <th>Codigo</th>
-          <th>Disponibilidad</th>
+          <th>Modelo</th>
+          <th>Carga</th>
+          <th>Patente</th>
           <th>Detalles</th>
           <th>Opciones</th>
 
@@ -23,17 +22,16 @@
         </tr>
       </thead>
       <tbody>
-        <% @products.each do |product| %>
+        <% @trucks.each do |truck| %>
           <tr>
-            <td><%= product.liters %></td>
-            <td><%= product.price %></td>
-            <td><%= product.product_number %></td>
-            <td><%= product.stock %></td>
-            <td><%= product.detail %></td>
-            <td><%= link_to edit_product_path(product), class: "btn btn-primary" do %>
+            <td><%= truck.name %></td>
+            <td><%= truck.load %></td>
+            <td><%= truck.number_plate %></td>
+            <td><%= truck.detail %></td>
+            <td><%= link_to edit_truck_path(truck), class: "btn btn-primary" do %>
                   <i class="far fa-edit"></i> Editar
                 <% end %>
-                <%= link_to product_path(product),
+                <%= link_to truck_path(truck),
                           method: :delete,
                           data: {confirm: '¿Estas seguro?'}, class: "btn btn-danger" do %>
                             <i class="far fa-trash-alt">  </i> Eliminar </td>

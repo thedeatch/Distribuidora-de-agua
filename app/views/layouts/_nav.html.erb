@@ -32,6 +32,20 @@
             <li><a><%= link_to "Agregar producto", new_product_url%></a></li>
           </ul>
         </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Conductores <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a><%= link_to "Ver conductores", driver_path%></a></li>
+            <li><a><%= link_to "Agregar conductores", new_driver_url%></a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Camiones <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a><%= link_to "Ver camiones", truck_path%></a></li>
+            <li><a><%= link_to "Agregar camion", new_truck_url%></a></li>
+          </ul>
+        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
