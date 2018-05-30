@@ -1,0 +1,35 @@
+
+<body>
+  <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <%= form_for(@truck) do |f| %>
+          <% if @truck.errors.any? %>
+            <%= pluralize(@truck.errors.count, "Errores") %>
+            <% @truck.errors.full_messages.each do |error| %>
+              <%= error %>
+            <% end %>
+          <% end %>
+          <p>
+          <%= f.label :Modelo %>
+          <%= f.text_field :name, class: 'form-control' %>
+          </p>
+          <p>
+          <%= f.label :Carga %>
+          <%= f.text_field :load, class: 'form-control' %>
+          </p>
+          <p>
+          <%= f.label :Patente %>
+          <%= f.text_field :number_plate, class: 'form-control' %>
+          </p>
+          <p>
+          <%= f.label :Detalles %>
+          <%= f.text_field :detail, class: 'form-control' %>
+          </p>
+          <p>
+          <%= f.submit "Aceptar", class: "btn btn-primary" %>
+          </p>
+        <% end %>
+
+      </div>
+  </div>
+</body>

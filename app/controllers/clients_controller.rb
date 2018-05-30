@@ -15,10 +15,10 @@ class ClientsController < ApplicationController
     def create
       @client = Client.new(client_params)
       if @client.save
-        flash[:success] = "Cliente exitosamente agregado"
+        flash[:success] = "Datos del cliente exitosamente agregados"
         redirect_to @client
       else
-        flash[:error] = "Cliente no se guardo correctamente"
+        flash[:error] = "Los datos del cliente no se han podido guardar, intente nuevamente"
         render :new
       end
     end
@@ -33,15 +33,22 @@ class ClientsController < ApplicationController
       if @client.save
         flash[:success] = "Se han actualizado los datos del cliente"
         redirect_to @client
-
       else
-        flash[:error] = "Datos del cliente no se actualizaron"
+        flash[:error] = "No se han podido actualizar los datos, intente nuevamente"
         render :edit
       end
     end
 
     def destroy
-      @client = Client.find(params[:id]).destroy
+      @client = Client.find(params[:id])
+
+      if @client.destroy
+        flash.now[:notice] = "Se ha eliminado el cliente de la base de datos"
+        redirect_to @client
+      else
+        flash.now[:alert] = "Ha habido un error al intentar eliminar el cliente, intente nuevamente"
+        redirect_to @client
+      end
 
     end
 

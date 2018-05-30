@@ -9,12 +9,9 @@ class DriversController < ApplicationController
   end
 
   def new
-    @drivers = Driver.new
+    @driver = Driver.new
   end
 
-  def _form
-
-  end
 
   def create
     @driver = Driver.create(driver_params)
