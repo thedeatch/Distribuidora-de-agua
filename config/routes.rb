@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get '/drivers/:id/edit', to: 'drivers#edit', as: 'edit_driver'
   put '/drivers/:id', to: 'drivers#update'
   patch '/drivers/:id', to: 'drivers#update'
-  delete '/drivers/:id', to: 'drivers#destroy'
+  delete '/drivers/:id', to: 'drivers#destroy', as: 'delete_driver'
 
 
   #get 'welcome/index'
@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   get '/clients/:id/edit', to: 'clients#edit', as: 'edit_client'
   put '/clients/:id', to: 'clients#update'
   patch '/clients/:id', to: 'clients#update'
-  delete '/clients/:id', to: 'clients#destroy'
+  delete '/clients/:id', to: 'clients#destroy', as: 'delete_client'
 
 
 
