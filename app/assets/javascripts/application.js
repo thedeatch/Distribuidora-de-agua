@@ -12,6 +12,10 @@
 //
 //= require rails-ujs
 //= require turbolinks
-//= require_tree .
 //= require jquery
 //= require bootstrap-sprockets
+//= require turbolinks
+//= require_tree .
+
+// esto es para que los dropdowns del navbar funcionen correctamente
+$('.dropdown-toggle').dropdown();
