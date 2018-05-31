@@ -12,7 +12,6 @@ class DriversController < ApplicationController
     @driver = Driver.new
   end
 
-
   def create
     @driver = Driver.create(driver_params)
     if @driver.save
@@ -42,7 +41,15 @@ class DriversController < ApplicationController
   end
 
   def destroy
-    @driver = Driver.find(params[:id]).destroy
+    @driver = Driver.find(params[:id])
+
+    if @driver.destroy
+      flash.now[:notice] = "Se ha eliminado el cliente de la base de datos"
+      redirect_to @driver
+    else
+      flash.now[:alert] = "Ha habido un error al intentar eliminar el cliente, intente nuevamente"
+      redirect_to @driver
+    end
 
   end
 
