@@ -44,10 +44,10 @@ class DriversController < ApplicationController
     @driver = Driver.find(params[:id])
 
     if @driver.destroy
-      flash.now[:notice] = "Se ha eliminado el cliente de la base de datos"
+      flash.now[:notice] = "Se ha eliminado el conductor"
       redirect_to drivers_path
     else
-      flash.now[:alert] = "Ha habido un error al intentar eliminar el cliente, intente nuevamente"
+      flash.now[:alert] = "Ha habido un error al intentar eliminar el conductor, intente mas tarde"
       redirect_to drivers_path
     end
 

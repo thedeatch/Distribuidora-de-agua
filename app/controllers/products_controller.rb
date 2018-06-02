@@ -28,7 +28,7 @@ class ProductsController < ApplicationController
   end
 
   def update
-
+    @product = Product.find(params[:id])
     if @product.update(product_params)
       flash[:success] = "Se han actualizado los datos del producto"
       redirect_to products_path
@@ -39,7 +39,15 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    @product = Product.find(params[:id]).destroy
+    @product = Product.find(params[:id])
+
+    if @product.destroy
+      flash.now[:notice] = "Se ha eliminado el producto"
+      redirect_to products_path
+    else
+      flash.now[:alert] = "Ha habido un error al intentar eliminar el producto, intente mas tarde"
+      redirect_to products_path
+    end
   end
 
   private

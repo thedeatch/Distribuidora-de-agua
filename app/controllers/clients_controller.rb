@@ -35,7 +35,7 @@ class ClientsController < ApplicationController
         flash[:success] = "Se han actualizado los datos del cliente"
         redirect_to clients_path
       else
-        flash[:error] = "No se han podido actualizar los datos, intente nuevamente"
+        flash[:error] = "No se han podido actualizar los datos, intente mas tarde"
         render :edit
       end
     end
@@ -44,7 +44,7 @@ class ClientsController < ApplicationController
       @client = Client.find(params[:id])
 
       if @client.destroy
-        flash.now[:notice] = "Se ha eliminado el cliente de la base de datos"
+        flash.now[:notice] = "Se ha eliminado el cliente"
         redirect_to clients_path
       else
         flash.now[:alert] = "Ha habido un error al intentar eliminar el cliente, intente nuevamente"

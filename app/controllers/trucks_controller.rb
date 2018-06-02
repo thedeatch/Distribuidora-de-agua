@@ -30,12 +30,12 @@ class TrucksController < ApplicationController
   end
 
   def update
-
+    @truck = Truck.find(params[:id])
     if @truck.update(truck_params)
       flash[:success] = "Se han actualizado los datos del camion"
       redirect_to trucks_path
     else
-      flash[:error] = "No se han podido actualizar los datos, intente nuevamente"
+      flash[:error] = "No se han podido actualizar los datos, intente mas tarde"
       render :edit
     end
   end
@@ -44,7 +44,7 @@ class TrucksController < ApplicationController
     @truck.find(params[:id])
 
     if @truck.destroy
-      flash[:notice] = "Se ha eliminado el camion de la base de datos"
+      flash[:notice] = "Se ha eliminado el camion"
       redirect_to trucks_path
     else
       flash[:alert] = "Ha habido un error al intentar eliminar al camion, intente nuevamente"
