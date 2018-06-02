@@ -1,6 +1,6 @@
 class Client < ApplicationRecord
   has_many :orders
-  has_many :products, :through => :orders
+  has_many :products, through: :orders
 
 
   VALID_NAME_REGEX = /\A[a-zA-Z]+(?: [a-zA-Z]+)?\z/

@@ -17,7 +17,7 @@ class TrucksController < ApplicationController
 
     if @truck.save
       flash[:success] = "Datos del camión exitosamente agregados"
-      redirect_to @truck
+      redirect_to trucks_path
     else
       flash[:error] = "Los datos del camion no se han podido guardar, intente nuevamente"
       render :new
@@ -30,11 +30,10 @@ class TrucksController < ApplicationController
   end
 
   def update
-    @truck = Truck.update(truck_params)
 
-    if @truck.save
+    if @truck.update(truck_params)
       flash[:success] = "Se han actualizado los datos del camion"
-      redirect_to @truck
+      redirect_to trucks_path
     else
       flash[:error] = "No se han podido actualizar los datos, intente nuevamente"
       render :edit
@@ -46,10 +45,10 @@ class TrucksController < ApplicationController
 
     if @truck.destroy
       flash[:notice] = "Se ha eliminado el camion de la base de datos"
-      redirect_to @truck
+      redirect_to trucks_path
     else
       flash[:alert] = "Ha habido un error al intentar eliminar al camion, intente nuevamente"
-      redirect_to @truck
+      redirect_to trucks_path
     end
   end
 

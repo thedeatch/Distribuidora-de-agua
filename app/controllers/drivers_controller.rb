@@ -13,10 +13,10 @@ class DriversController < ApplicationController
   end
 
   def create
-    @driver = Driver.create(driver_params)
+    @driver = Driver.new(driver_params)
     if @driver.save
       flash[:success] = "Conductor exitosamente agregado"
-      redirect_to @driver
+      redirect_to drivers_path
     else
       flash[:error] = "Conductor no se guardo correctamente"
       render :new
@@ -29,10 +29,10 @@ class DriversController < ApplicationController
   end
 
   def update
-    @driver = Driver.update(driver_params)
-    if @driver.save
+    @driver = Driver.find(params[:id])
+    if @driver.update(driver_params)
       flash[:success] = "Se han actualizado los datos del conductor"
-      redirect_to @driver
+      redirect_to drivers_path
 
     else
       flash[:error] = "Datos del conductor no se actualizaron"
@@ -45,10 +45,10 @@ class DriversController < ApplicationController
 
     if @driver.destroy
       flash.now[:notice] = "Se ha eliminado el cliente de la base de datos"
-      redirect_to @driver
+      redirect_to drivers_path
     else
       flash.now[:alert] = "Ha habido un error al intentar eliminar el cliente, intente nuevamente"
-      redirect_to @driver
+      redirect_to drivers_path
     end
 
   end

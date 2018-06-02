@@ -16,7 +16,7 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
     if @product.save
       flash[:success] = "Producto almacenado correctamente"
-      redirect_to @product
+      redirect_to products_path
     else
       flash[:error] = "Producto no se ha almacenado correctamente"
       render :new
@@ -28,10 +28,10 @@ class ProductsController < ApplicationController
   end
 
   def update
-    @product = Product.update(product_params)
-    if @product.save
+
+    if @product.update(product_params)
       flash[:success] = "Se han actualizado los datos del producto"
-      redirect_to @product
+      redirect_to products_path
     else
       flash[:error] = "No se han podido actualizar los datos del producto"
       render :edit

@@ -10,39 +10,39 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><%= link_to "Inicio", home_path %></li>
+        <li class="active"><%= link_to "Inicio", root_path %></li>
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Clientes <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a><%= link_to "Ver clientes", client_path%></a></li>
+            <li><a><%= link_to "Ver clientes", clients_path%></a></li>
             <li><a><%= link_to "Agregar Cliente", new_client_url%></a></li>
           </ul>
         </li>
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Órdenes <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a><%= link_to "Ver ordenes", order_path%></a></li>
+            <li><a><%= link_to "Ver ordenes", orders_path%></a></li>
             <li><a><%= link_to "Crear Orden", new_order_url%></a></li>
           </ul>
         </li>
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Productos <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a><%= link_to "Ver productos", product_path%></a></li>
+            <li><a><%= link_to "Ver productos", products_path%></a></li>
             <li><a><%= link_to "Agregar producto", new_product_url%></a></li>
           </ul>
         </li>
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Conductores <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a><%= link_to "Ver conductores", driver_path%></a></li>
+            <li><a><%= link_to "Ver conductores", drivers_path%></a></li>
             <li><a><%= link_to "Agregar conductores", new_driver_url%></a></li>
           </ul>
         </li>
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Camiones <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a><%= link_to "Ver camiones", truck_path%></a></li>
+            <li><a><%= link_to "Ver camiones", trucks_path%></a></li>
             <li><a><%= link_to "Agregar camion", new_truck_url%></a></li>
           </ul>
         </li>

@@ -1,0 +1,2 @@
+module DriverTrucksHelper
+end
