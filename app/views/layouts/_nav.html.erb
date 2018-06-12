@@ -36,7 +36,11 @@
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Conductores <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a><%= link_to "Ver conductores", drivers_path%></a></li>
-            <li><a><%= link_to "Agregar conductores", new_driver_url%></a></li>
+            <li><a><%= link_to "Agregar conductores", new_driver_url%></a></li>  
+            <li><a><%= link_to "Asignar conductor a camion", new_driver_truck_url%></a></li> 
+            <li><a><%= link_to "Ver asignaciones", driver_trucks_path%></a></li> 
+ 
+
           </ul>
         </li>
         <li class="dropdown">

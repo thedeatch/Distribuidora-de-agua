@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180524035138) do
+ActiveRecord::Schema.define(version: 20180611211017) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,11 +26,12 @@ ActiveRecord::Schema.define(version: 20180524035138) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "driver_trucks", id: false, force: :cascade do |t|
+  create_table "driver_trucks", force: :cascade do |t|
     t.integer "driver_id"
     t.integer "truck_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "day"
   end
 
   create_table "drivers", force: :cascade do |t|
@@ -45,7 +46,6 @@ ActiveRecord::Schema.define(version: 20180524035138) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.datetime "order_date"
     t.datetime "delivery_date"
     t.integer "amount"
     t.integer "client_id"

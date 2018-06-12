@@ -1,4 +1,4 @@
-class DriversController < ApplicationController
+  class DriversController < ApplicationController
 
   def index
     @drivers = Driver.all
@@ -58,7 +58,7 @@ class DriversController < ApplicationController
       private
 
         def driver_params
-          params.required(:driver).permit(:first_name, :last_name, :income, :license, :birthday, :rut)
+          params.require(:driver).permit(:first_name, :last_name, :income, :license, :birthday, :rut)
         end
 
 end

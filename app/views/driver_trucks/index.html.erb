@@ -1,0 +1,51 @@
+<% provide(:title, "Asignaciones") %>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <div class="container">
+    <h1>Asignaciones</h1>
+
+    <div class="table-responsive-md">
+    <table class="table table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th>Conductor</th> 
+          <th> </th>
+          <th>RUT Conductor</th>
+          <th>Patente Camión</th>
+          <th>Modelo</th> 
+          <th>Día</th>
+          <th>Opciones</th>
+
+
+        </tr>
+      </thead>
+      <tbody>
+        <% @driver_trucks.each do |driver_truck| %>
+          <tr>
+            <td><%= driver_truck.driver.first_name %></td> 
+            <td><%= driver_truck.driver.last_name %></td>
+            <td><%= driver_truck.driver.rut %></td>
+            <td><%= driver_truck.truck.number_plate %></td>
+            <td><%= driver_truck.truck.name %></td>
+            <td><%= driver_truck.day %></td>
+            <td><%= link_to edit_driver_truck_path(driver_truck), class: "btn btn-primary" do %>
+                  <i class="far fa-edit"></i> Editar
+                <% end %>
+                <%= link_to driver_truck_path(driver_truck),
+                          method: :delete,
+                          data: {confirm: '¿Estas seguro?'}, class: "btn btn-danger" do %>
+                            <i class="far fa-trash-alt">  </i> Eliminar </td>
+
+                <% end %>
+
+          </tr>
+          <% end %>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  </body>
+</html>
