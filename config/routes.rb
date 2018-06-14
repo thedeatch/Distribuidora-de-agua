@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  devise_for :users
   get "help", to: 'static_pages#help'
 
   resources :clients
