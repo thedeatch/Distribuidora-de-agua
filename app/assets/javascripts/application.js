@@ -12,15 +12,22 @@
 //
 //= require rails-ujs
 //= require turbolinks
-//= require jquery
+//= require jquery 
+//= require jquery_ujs 
+//= require jquery-ui/widgets/autocomplete
+//= require autocomplete-rails 
+//= require bootstrap
 //= require bootstrap-sprockets
-//= require turbolinks
+//= require turbolinks 
 //= require moment
 //= require bootstrap-datetimepicker 
 //= require bootstrap-datepicker
 //= require_tree .
 
 // esto es para que los dropdowns del navbar funcionen correctamente
-$('.dropdown-toggle').dropdown();
 
 $('.date#datetimepicker').datetimepicker();
+
+jQuery(document).ready(function($) {
+  $('.dropdown-toggle').dropdown();
+});

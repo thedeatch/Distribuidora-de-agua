@@ -11,7 +11,7 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav"> 
         <% if user_signed_in? %> 
-            <li class="active"><%= link_to "Inicio", root_path %></li>
+            <li class="active"><%= link_to root_path do %> <i class="fas fa-home"></i> <% end %> </li>
             <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#">Clientes <span class="caret"></span></a>
               <ul class="dropdown-menu">
@@ -49,7 +49,20 @@
                 <li><a><%= link_to "Agregar camion", new_truck_url%></a></li>
               </ul>
             </li>
-          </ul>
+          </ul>  
+
+	        <%= form_with url: search_path, local: true, method: :get, html: { class: "navbar-form navbar-left" } do |form| %>  
+	        	<div class = "input-group"> 
+	        		<%= form.text_field :q, placeholder: "Buscar", data: { behavior: "autocomplete" }, class: "form-control" %> 
+	        		<div class = "input-group-btn"> 
+			        	<%= form.button class: "btn btn-success" do %>  
+										<i class="fas fa-search"></i>
+			        	<% end %>
+	        		</div> 
+	        	</div>
+	        <% end %>	
+        		
+
         <% else %>  
         <% end %>
       <ul class="nav navbar-nav navbar-right">
@@ -59,7 +72,7 @@
           <li> <%= link_to new_user_registration_path do%><i class="fas fa-user"></i> Registrarse <% end %></li> 
           <li> <%= link_to new_user_session_path do %><i class="fas fa-sign-in-alt"></i> Iniciar sesión <% end %></li>  
         <% end %>
-        
+      </ul>
     </div>
   </div>
 </nav>

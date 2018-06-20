@@ -10,5 +10,10 @@ class Client < ApplicationRecord
   validates :email, format: { with: VALID_EMAIL_REGEX }, confirmation: { case_sensitive: false }, uniqueness: true, length: { in: 7..254 }, presence: true
   validates :address, length: { in: 10..254 }, presence: true
   validates :phone, phone: true, presence: true, uniqueness: true
-  validates :rut, rut: true, uniqueness: true, presence: true
+  validates :rut, rut: true, uniqueness: true, presence: true 
+
+  def fullName 
+  	[first_name, last_name].compact.join(' ')
+  end
+
 end
