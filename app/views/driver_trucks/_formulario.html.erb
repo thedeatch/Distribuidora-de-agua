@@ -10,12 +10,16 @@
             <% end %>
           <% end %>
           <p>
-          <%= f.label :Conductor  %>
-          <%= f.collection_select :driver_id, Driver.all, :id, :first_name, type: "button", class: "btn btn-default btn-sm dropdown-toggle"%>
+          <%= f.label :Conductor  %> 
+            <p>
+            <%= f.collection_select :driver_id, Driver.all, :id, :fullName, type: "button", include_blank: "Seleccione conductor", class: "btn btn-default btn-sm dropdown-toggle"%> 
+            </p>
           </p>
           <p>
-          <%= f.label :Camión %>
-          <%= f.collection_select :truck_id, Truck.all, :id, :number_plate, type: "button", class: "btn btn-default btn-sm dropdown-toggle" %>
+          <%= f.label :Camión %> 
+            <p>
+            <%= f.collection_select :truck_id, Truck.all, :id, :number_plate, type: "button", include_blank: "Seleccione patente", class: "btn btn-default btn-sm dropdown-toggle" %> 
+            </p>
           </p> 
 
           <p> 

@@ -26,20 +26,23 @@
           <%= f.text_field :amount, class: 'form-control' %>
           </p>
           <p>
-          <%= f.label :Cliente %>
-          <%= f.collection_select :client_id, Client.all, :id, :fullName, type: "button", include_blank: "Seleccione cliente", class: "btn btn-default btn-sm dropdown-toggle"%>
+          <%= f.label :Cliente %> 
+            <p>
+            <%= f.collection_select :client_id, Client.all, :id, :fullName, type: "button", include_blank: "Seleccione cliente", class: "btn btn-default btn-sm dropdown-toggle"%> 
+            </p>
           </p>
           <p>
-          <%= f.label :Producto %>
-          <%= f.collection_select :product_id, Product.all, :id, :liters, type: "button", include_blank: "Seleccione producto", class: "btn btn-default btn-sm dropdown-toggle"%>
+          <%= f.label :Producto %> 
+            <p>
+            <%= f.collection_select :product_id, Product.all, :id, :liters, type: "button", include_blank: "Seleccione producto", class: "btn btn-default btn-sm dropdown-toggle"%> 
+            </p>
           </p>
           <p>
           <%= f.label :Camión %>
-        
-
-           <%= f.collection_select :truck_id, Truck.all, :id, :number_plate, type: "button", data_toggle:"dropdown", include_blank: "Seleccione camión", class: "btn btn-mini dropdown toggle"%> 
+            <p>
+            <%= f.collection_select :truck_id, Truck.all, :id, :number_plate, type: "button", data_toggle:"dropdown", include_blank: "Seleccione camión", class: "btn btn-mini dropdown toggle"%> 
           
-  
+            </p>
           </p>
           <p>
           <%= f.submit "Aceptar", class: "btn btn-primary" %>

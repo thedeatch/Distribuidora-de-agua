@@ -13,7 +13,6 @@ Rails.application.routes.draw do
 
   root 'static_pages#home'
   
-  get :autocomplete, controller: :main 
   get :search, controller: :main 
   root to: "main#index"
 
