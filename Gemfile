@@ -48,10 +48,12 @@ gem 'sass', '~> 3.5', '>= 3.5.6'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 
 gem 'font-awesome-sass', '~> 5.0', '>= 5.0.13'
-gem 'jquery-turbolinks', '~> 2.1'
+gem 'jquery-turbolinks', '~> 2.1' 
+gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 
 gem 'devise'
-
+gem 'rails-jquery-autocomplete'
+gem 'ransack', '~> 1.8', '>= 1.8.8'
 
 
 group :development, :test do

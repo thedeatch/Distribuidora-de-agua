@@ -12,5 +12,10 @@ Rails.application.routes.draw do
   resources :driver_trucks
 
   root 'static_pages#home'
+  
+  get :autocomplete, controller: :main 
+  get :search, controller: :main 
+  root to: "main#index"
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

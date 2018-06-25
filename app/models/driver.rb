@@ -25,7 +25,11 @@ class Driver < ApplicationRecord
       if age < 18
         errors.add(:birthday, "Fecha de nacimiento incorrecta, el conductor no puede ser menor de edad")
       end
-    end
+    end 
+
+    def fullName 
+    [first_name, last_name].compact.join(' ')
+  end
 
 end
     def function checkRut(rut) {
