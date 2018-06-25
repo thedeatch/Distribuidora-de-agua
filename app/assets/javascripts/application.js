@@ -16,11 +16,10 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require moment
-//= require bootstrap-datetimepicker 
+//= require bootstrap-datetimepicker
 //= require bootstrap-datepicker
 //= require_tree .
 
 // esto es para que los dropdowns del navbar funcionen correctamente
 $('.dropdown-toggle').dropdown();
-
 $('.date#datetimepicker').datetimepicker();
