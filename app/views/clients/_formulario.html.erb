@@ -39,7 +39,9 @@
           <script type="text/javascript">
           function formatClient(client)
           {client.value=client.value.replace(/[.-]/g, '')
-          .replace( /^(\d{1,2})(\d{3})(\d{3})(\w{1})$/, '$1.$2.$3-$4')}
+          .replace( /^(\d{1,2})(\d{3})(\d{3})(\w{1})$/, '$1.$2.$3-$4')
+          return client.value
+        }
           </script>
           </p>
 
