@@ -24,7 +24,12 @@
 
           <p> 
           <%= f.label :Día %> 
-          <%= f.text_field :day, class: 'form-control datepicker' %>
+          <div class='input-group date'>  
+            <%= f.text_field :day, class: 'form-control datepicker', autocomplete: "off", placeholder: 'DD-MM-AAAA' %> 
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-calendar"></span>
+            </span> 
+          </div>
 
      
           </P>

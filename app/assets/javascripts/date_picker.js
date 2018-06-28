@@ -1,7 +1,3 @@
 $(document).on('turbolinks:load', function () {
- $('.datepicker').datepicker({
-   format: 'yyyy-mm-dd'
-   locale: 'es'
-});
-
+ $('.datepicker').datepicker({format: 'dd-mm-yyyy'});
 });
