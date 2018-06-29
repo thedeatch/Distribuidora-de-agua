@@ -12,38 +12,29 @@
           <% end %>
           <p>
           <%= f.label :Nombre %>
-          <%= f.text_field :first_name, class: 'form-control' %>
+          <%= f.text_field :first_name, class: 'form-control', autocomplete: 'off' %>
           </p>
           <p>
           <%= f.label :Apellido %>
-          <%= f.text_field :last_name, class: 'form-control' %>
+          <%= f.text_field :last_name, class: 'form-control', autocomplete: 'off' %>
           </p>
           <p>
           <%= f.label :Correo %>
-          <%= f.email_field :email, class: 'form-control' %>
+          <%= f.email_field :email, class: 'form-control', autocomplete: 'off' %>
           </p>
           <p>
           <%= f.label :Telefono %>
-          <%= f.text_field :phone, class: 'form-control' %>
+          <%= f.text_field :phone, class: 'form-control', autocomplete: 'off' %>
           </p>
           <p>
           <%= f.label :Direccion %>
           <%= f.text_field :address, class: 'form-control' %>
           </p>
           <p>
-          <%= f.label :RUT %>
+          <%= f.label :RUT %> 
 
-          <input type="text" class="inputs"
-          name="client" id="client"
-          maxlength="12" onkeyup="formatClient(this)">
-          <script type="text/javascript">
-          function formatClient(client)
-          {client.value=client.value.replace(/[.-]/g, '')
-          .replace( /^(\d{1,2})(\d{3})(\d{3})(\w{1})$/, '$1.$2.$3-$4')
-          return client.value
-        }
-          </script>
-          </p>
+          <%= f.text_field :rut, class: 'form-control', autocomplete: 'off', id: 'rut' %>
+      
 
           <p>
           <%= f.submit "Guardar", class: "btn btn-primary"%>
@@ -52,3 +43,4 @@
       </div>
   </div>
 </body>
+

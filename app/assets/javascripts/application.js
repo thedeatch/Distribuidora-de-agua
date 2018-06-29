@@ -14,7 +14,8 @@
 //= require turbolinks
 //= require jquery 
 //= require jquery_ujs 
-//= require jquery-ui/widgets/autocomplete
+//= require jquery-ui/widgets/autocomplete 
+//= require select2  
 //= require autocomplete-rails 
 //= require bootstrap
 //= require bootstrap-sprockets
@@ -27,8 +28,19 @@
 // esto es para que los dropdowns del navbar funcionen correctamente
 
 $('.dropdown-toggle').dropdown();
-$('.date#datetimepicker').datetimepicker();
+$('.date#datetimepicker').datetimepicker(); 
+
+$(document).ready(function() {
+  $( "select#simple-example").select2({ theme: "bootstrap" });
+});
 
 jQuery(document).ready(function($) {
   $('.dropdown-toggle').dropdown();
-});
+}); 
+
+
+jQuery(document).ready(function($) {
+  $("#rut").rut().on('rutValido', function(e, rut, dv) {
+      alert("El rut " + rut + "-" + dv + " es correcto");
+  }, { minimumLength: 7} );
+})

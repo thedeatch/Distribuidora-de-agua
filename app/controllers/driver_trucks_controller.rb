@@ -1,5 +1,8 @@
 class DriverTrucksController < ApplicationController
 
+  before_action :authencitate_user!
+
+
   def index 
     @driver_trucks = DriverTruck.all
   end
