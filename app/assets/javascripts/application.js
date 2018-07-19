@@ -27,8 +27,15 @@
 
 // esto es para que los dropdowns del navbar funcionen correctamente
 
+src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/locale/es.js";
+
 $('.dropdown-toggle').dropdown();
-$('.date#datetimepicker').datetimepicker(); 
+
+$(document).ready(function() { 
+  $('.date#datetimepicker').datetimepicker({ 
+    locale: 'es',
+  }); 
+});
 
 $(document).ready(function() {
   $( "select#simple-example").select2({ theme: "bootstrap" });

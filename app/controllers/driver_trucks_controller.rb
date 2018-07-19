@@ -1,6 +1,6 @@
 class DriverTrucksController < ApplicationController
 
-  before_action :authencitate_user!
+  before_action :authenticate_user!
 
 
   def index 
