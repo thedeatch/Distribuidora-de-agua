@@ -11,11 +11,11 @@
           <% end %>
           <p>
           <%= f.label :Nombre %>
-          <%= f.text_field :first_name, class: 'form-control', autocomplete: 'off' %>
+          <%= f.text_field :first_name, class: 'form-control', autocomplete: 'off', style: 'text-transform:capitalize;' %>
           </p>
           <p>
           <%= f.label :Apellido %>
-          <%= f.text_field :last_name, class: 'form-control', autocomplete: 'off' %>
+          <%= f.text_field :last_name, class: 'form-control', autocomplete: 'off', style: 'text-transform:capitalize;' %>
           </p>
           <p>
           <%= f.label :RUT %>
@@ -33,13 +33,13 @@
           <%= f.label :Vigencia, " Inactivo", :value => false %>
           <%= f.radio_button :license, false %>
           </div>
-          </p> 
+          </p>
           <p>
-          <%= f.label :Fecha_Nacimiento %> 
+          <%= f.label :Fecha_Nacimiento %>
           <div>
-          <%= f.date_select :birthday, :order => [:day, :month, :year], start_year: 1950, autocomplete: 'off' %> 
-          </div> 
-          </p> 
+          <%= f.date_select :birthday, :order => [:day, :month, :year], start_year: 1950, autocomplete: 'off' %>
+          </div>
+          </p>
 
           <p>
           <%= f.submit "Aceptar", class: "btn btn-primary"%>

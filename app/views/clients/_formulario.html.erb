@@ -12,11 +12,11 @@
           <% end %>
           <p>
           <%= f.label :Nombre %>
-          <%= f.text_field :first_name, class: 'form-control', autocomplete: 'off' %>
+          <%= f.text_field :first_name, class: 'form-control', autocomplete: 'off', style: 'text-transform:capitalize;' %>
           </p>
           <p>
           <%= f.label :Apellido %>
-          <%= f.text_field :last_name, class: 'form-control', autocomplete: 'off' %>
+          <%= f.text_field :last_name, class: 'form-control', autocomplete: 'off', style: 'text-transform:capitalize;' %>
           </p>
           <p>
           <%= f.label :Correo %>
@@ -31,10 +31,10 @@
           <%= f.text_field :address, class: 'form-control' %>
           </p>
           <p>
-          <%= f.label :RUT %> 
+          <%= f.label :RUT %>
 
           <%= f.text_field :rut, class: 'form-control', autocomplete: 'off', id: 'rut' %>
-      
+
 
           <p>
           <%= f.submit "Guardar", class: "btn btn-primary"%>
@@ -43,4 +43,3 @@
       </div>
   </div>
 </body>
-

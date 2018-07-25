@@ -5,7 +5,7 @@ class Driver < ApplicationRecord
     validates :first_name, presence: {message: 'ingrese nombre'}, length: { in: 3..50 }, format: {with: VALID_NAME_REGEX}
     validates :last_name, presence: {message: 'ingrese apellido'}, length: { in: 3..50 }, format: {with: VALID_NAME_REGEX}
     validate :fecha_nacimiento_futuro, :mayor_de_edad
-    validates :income, presence: {message: 'ingrese sueldo'}, numericality: { only_integer: true }
+    validates :income, :incomemin, presence: {message: 'ingrese sueldo'}, numericality: { only_integer: true }
     validates :license, inclusion: { in: [ true, false ] }
     validates :rut, rut: true, uniqueness: true, presence: true
     #validates_with RutValidator
@@ -25,11 +25,15 @@ class Driver < ApplicationRecord
       if age < 18
         errors.add(:birthday, "Fecha de nacimiento incorrecta, el conductor no puede ser menor de edad")
       end
-    end 
+    end
 
-    def fullName 
+    def fullName
     [first_name, last_name].compact.join(' ')
   end
 
 end
-   
+   def incomemin
+     if income < 5000
+       errors.add(:income, "El valor del sueldo debe ser superior a 5000")
+     end
+  end
