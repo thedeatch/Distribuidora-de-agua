@@ -11,19 +11,19 @@
           <% end %>
           <p>
           <%= f.label :Nombre %>
-          <%= f.text_field :first_name, class: 'form-control', autocomplete: 'off', style: 'text-transform:capitalize;' %>
+          <%= f.text_field :first_name, class: 'form-control', autocomplete: 'off', style: 'text-transform:capitalize;' , placeholder: "Ingresa tu nombre" %>
           </p>
           <p>
           <%= f.label :Apellido %>
-          <%= f.text_field :last_name, class: 'form-control', autocomplete: 'off', style: 'text-transform:capitalize;' %>
+          <%= f.text_field :last_name, class: 'form-control', autocomplete: 'off', style: 'text-transform:capitalize;' , placeholder: "Ingresa tu apellido" %>
           </p>
           <p>
           <%= f.label :RUT %>
-          <%= f.text_field :rut, class: 'form-control', autocomplete: 'off', id: 'rut' %>
+          <%= f.text_field :rut, class: 'form-control', autocomplete: 'off', id: 'rut' , placeholder: "12.345.678-9" %>
           </p>
           <p>
           <%= f.label :Sueldo %>
-          <%= f.text_field :income, class: 'form-control', autocomplete: 'off' %>
+          <%= f.text_field :income, class: 'form-control', autocomplete: 'off' , placeholder: "10000" %>
           </p>
           <p>
           <%=f.label :Vigencia %>
