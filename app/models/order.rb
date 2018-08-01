@@ -8,6 +8,8 @@ class Order < ApplicationRecord
 
   after_save :restar_del_stock 
   after_destroy :volver_al_stock
+  
+  #validaciones
 
   validates :delivery_date, presence: true
   validate :fecha_de_entrega_pasado
@@ -15,7 +17,6 @@ class Order < ApplicationRecord
   validates :amount, presence: true, numericality: { only_integer: true } 
   validate :stock_negativo
 
-  #validaciones
 
   def fecha_de_entrega_pasado
     if !delivery_date.blank? && delivery_date < Date.today

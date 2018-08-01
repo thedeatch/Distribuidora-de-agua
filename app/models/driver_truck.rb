@@ -4,6 +4,8 @@ class DriverTruck < ApplicationRecord
 
   accepts_nested_attributes_for :driver, :truck
 
+  #validaciones
+
   validates :day, presence: true 
   validate :fecha_asignacion_pasado 
   validate :fecha_asignacion_futuro   
