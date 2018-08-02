@@ -11,20 +11,20 @@
           <% end %>
           <p>
           <%= f.label :Modelo %>
-          <%= f.text_field :name, class: 'form-control' %>
+          <%= f.text_field :name, class: 'form-control', placeholder: "Ingresa modelo del vehiculo" %>
           </p>
           <p>
           <%= f.label :Carga %>
-          <%= f.text_field :load, class: 'form-control' %>
+          <%= f.text_field :load, class: 'form-control' , placeholder: "Ingresa peso de la carga" %>
           </p>
           <p>
           <%= f.label :Patente %>
-          <%= f.text_field :number_plate, class: 'form-control', style: 'text-transform:uppercase;' %>
+          <%= f.text_field :number_plate, class: 'form-control', style: 'text-transform:uppercase;', placeholder: "Ej : ABCD12" %>
 
           </p>
           <p>
           <%= f.label :Detalles %>
-          <%= f.text_field :detail, class: 'form-control' %>
+          <%= f.text_field :detail, class: 'form-control' , placeholder: "Estado de vehiculo"%>
           </p>
           <p>
           <%= f.submit "Aceptar", class: "btn btn-primary" %>

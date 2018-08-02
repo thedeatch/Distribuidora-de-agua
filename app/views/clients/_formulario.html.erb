@@ -12,29 +12,29 @@
           <% end %>
           <p>
           <%= f.label :Nombre %>
-          <%= f.text_field :first_name, class: 'form-control', autocomplete: 'off' %>
+          <%= f.text_field :first_name, class: 'form-control', autocomplete: 'off', style: 'text-transform:capitalize;', placeholder: "Ingresa tu nombre" %>
           </p>
           <p>
           <%= f.label :Apellido %>
-          <%= f.text_field :last_name, class: 'form-control', autocomplete: 'off' %>
+          <%= f.text_field :last_name, class: 'form-control', autocomplete: 'off', style: 'text-transform:capitalize;' , placeholder: "Ingresa tu apellido" %>
           </p>
           <p>
           <%= f.label :Correo %>
-          <%= f.email_field :email, class: 'form-control', autocomplete: 'off' %>
+          <%= f.email_field :email, class: 'form-control', autocomplete: 'off' , placeholder: "Ejemplo@email.com"%>
           </p>
           <p>
           <%= f.label :Telefono %>
-          <%= f.text_field :phone, class: 'form-control', autocomplete: 'off' %>
+          <%= f.text_field :phone, class: 'form-control', autocomplete: 'off' , placeholder: "+56 9 0000 0000"%>
           </p>
           <p>
           <%= f.label :Direccion %>
           <%= f.text_field :address, class: 'form-control' %>
           </p>
           <p>
-          <%= f.label :RUT %> 
+          <%= f.label :RUT %>
 
-          <%= f.text_field :rut, class: 'form-control', autocomplete: 'off', id: 'rut' %>
-      
+          <%= f.text_field :rut, class: 'form-control', autocomplete: 'off', id: 'rut', placeholder: "12.345.678-9" %>
+
 
           <p>
           <%= f.submit "Guardar", class: "btn btn-primary"%>
@@ -43,4 +43,3 @@
       </div>
   </div>
 </body>
-
