@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180612233202) do
+ActiveRecord::Schema.define(version: 20180802220822) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,14 +26,6 @@ ActiveRecord::Schema.define(version: 20180612233202) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "driver_trucks", force: :cascade do |t|
-    t.integer "driver_id"
-    t.integer "truck_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.date "day"
-  end
-
   create_table "drivers", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -43,6 +35,14 @@ ActiveRecord::Schema.define(version: 20180612233202) do
     t.string "rut"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "drivers_trucks", force: :cascade do |t|
+    t.integer "driver_id"
+    t.integer "truck_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.date "day"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -91,8 +91,8 @@ ActiveRecord::Schema.define(version: 20180612233202) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "driver_trucks", "drivers"
-  add_foreign_key "driver_trucks", "trucks"
+  add_foreign_key "drivers_trucks", "drivers"
+  add_foreign_key "drivers_trucks", "trucks"
   add_foreign_key "orders", "clients"
   add_foreign_key "orders", "products"
   add_foreign_key "orders", "trucks"

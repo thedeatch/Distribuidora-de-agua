@@ -2,10 +2,10 @@
 <body>
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
-        <%= form_for [@driver,@truck,@driver_truck] do |f| %>
-          <% if @driver_truck.errors.any? %>
-            <%= pluralize(@driver_truck.errors.count, "Errores") %>
-            <% @driver_truck.errors.full_messages.each do |error| %>
+        <%= form_for [@driver,@truck,@drivers_truck] do |f| %>
+          <% if @drivers_truck.errors.any? %>
+            <%= pluralize(@drivers_truck.errors.count, "Errores") %>
+            <% @drivers_truck.errors.full_messages.each do |error| %>
               <%= error %>
             <% end %>
           <% end %>

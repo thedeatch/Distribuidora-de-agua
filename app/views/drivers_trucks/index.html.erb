@@ -23,18 +23,18 @@
         </tr>
       </thead>
       <tbody>
-        <% @driver_trucks.each do |driver_truck| %>
+        <% @drivers_trucks.each do |drivers_truck| %>
           <tr>
-            <td><%= driver_truck.driver.first_name %></td> 
-            <td><%= driver_truck.driver.last_name %></td>
-            <td><%= driver_truck.driver.rut %></td>
-            <td><%= driver_truck.truck.number_plate %></td>
-            <td><%= driver_truck.truck.name %></td>
-            <td><%= driver_truck.day %></td>
-            <td><%= link_to edit_driver_truck_path(driver_truck), class: "btn btn-primary" do %>
+            <td><%= drivers_truck.driver.first_name %></td> 
+            <td><%= drivers_truck.driver.last_name %></td>
+            <td><%= drivers_truck.driver.rut %></td>
+            <td><%= drivers_truck.truck.number_plate %></td>
+            <td><%= drivers_truck.truck.name %></td>
+            <td><%= drivers_truck.day %></td>
+            <td><%= link_to edit_drivers_truck_path(drivers_truck), class: "btn btn-primary" do %>
                   <i class="far fa-edit"></i> Editar
                 <% end %>
-                <%= link_to driver_truck_path(driver_truck),
+                <%= link_to drivers_truck_path(drivers_truck),
                           method: :delete,
                           data: {confirm: '¿Estas seguro?'}, class: "btn btn-danger" do %>
                             <i class="far fa-trash-alt">  </i> Eliminar </td>

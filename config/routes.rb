@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :products
   resources :orders
   resources :trucks 
-  resources :driver_trucks
+  resources :drivers_trucks
 
   root 'static_pages#home'
   
