@@ -13,6 +13,8 @@ class Client < ApplicationRecord
   VALID_RUT_REGEX = /\A(\d{1,3})\.(\d{1,3})\.(\d{1,3})\-(k|\d{1})\Z/i
   validates :rut, rut: true, uniqueness: true, presence: true, format: { with: VALID_RUT_REGEX }
 
+  #metodos
+
   def fullName 
   	[first_name, last_name].compact.join(' ')
   end

@@ -38,7 +38,7 @@ class Order < ApplicationRecord
 
   end 
 
-  #operaciones con el stock de productos
+  #metodos
 
   def restar_del_stock 
     product.stock -= self.amount 
