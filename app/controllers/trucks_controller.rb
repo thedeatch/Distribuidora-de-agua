@@ -44,7 +44,7 @@ class TrucksController < ApplicationController
   end
 
   def destroy
-    @truck.find(params[:id])
+    @truck = Truck.find(params[:id])
 
     if @truck.destroy
       flash[:notice] = "Se ha eliminado el camion"

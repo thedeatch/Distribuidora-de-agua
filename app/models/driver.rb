@@ -4,8 +4,8 @@ class Driver < ApplicationRecord
     #validaciones
 
     VALID_NAME_REGEX = /\A[a-zA-Z]+(?: [a-zA-Z]+)?\z/
-    validates :first_name, presence: {message: 'ingrese nombre'}, length: { in: 3..50 }, format: {with: VALID_NAME_REGEX}
-    validates :last_name, presence: {message: 'ingrese apellido'}, length: { in: 3..50 }, format: {with: VALID_NAME_REGEX}
+    validates :first_name, presence: {message: 'ingrese nombre'}, length: { in: 2..50 }, format: {with: VALID_NAME_REGEX}
+    validates :last_name, presence: {message: 'ingrese apellido'}, length: { in: 2..50 }, format: {with: VALID_NAME_REGEX}
     validate :fecha_nacimiento_futuro, :mayor_de_edad
     validates :income, presence: {message: 'ingrese sueldo'}, numericality: { only_integer: true } 
     validate :incomeMin
