@@ -1,13 +1,18 @@
 
+
 <body>
   <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <%= form_for(@truck) do |f| %>
-          <% if @truck.errors.any? %>
-            <%= pluralize(@truck.errors.count, "Errores") %>
-            <% @truck.errors.full_messages.each do |error| %>
-              <%= error %>
-            <% end %>
+    <div class="col-md-6">
+        <%= form_with(model: truck, local: true) do |f| %>
+
+
+          <% if truck.errors.any? %>
+            <ul class = "alert alert-warning">
+              <%= pluralize(truck.errors.count, "Errores") %>
+              <% truck.errors.full_messages.each do |error| %>
+                <li><%= error %></li>
+              <% end %>
+            </ul>
           <% end %>
           <p>
           <%= f.label :Modelo %>
