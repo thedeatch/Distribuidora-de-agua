@@ -1,7 +1,7 @@
 class Order < ApplicationRecord
 
   belongs_to :product, inverse_of: :orders
-  belongs_to :client, inverse_of: :orders
+  belongs_to :client, inverse_of: :orders, dependent: :destroy
   belongs_to :truck, inverse_of: :orders
 
   accepts_nested_attributes_for :product, :client, :truck 
