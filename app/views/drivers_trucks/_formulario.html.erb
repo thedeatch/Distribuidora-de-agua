@@ -1,39 +1,43 @@
 
 <body>
   <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-        <%= form_for [@driver,@truck,@drivers_truck] do |f| %>
-          <% if @drivers_truck.errors.any? %>
-            <%= pluralize(@drivers_truck.errors.count, "Errores") %>
-            <% @drivers_truck.errors.full_messages.each do |error| %>
-              <%= error %>
-            <% end %>
+    <div class="col-md-6">
+        <%= form_with(model:drivers_truck, local: true) do |f| %>
+
+
+          <% if drivers_truck.errors.any? %>
+            <ul class = "alert alert-warning">
+              <%= pluralize(drivers_truck.errors.count, "Errores") %>
+              <% drivers_truck.errors.full_messages.each do |error| %>
+                <li><%= error %></li>
+              <% end %>
+            </ul>
           <% end %>
           <p>
-          <%= f.label :Conductor  %> 
+          <%= f.label :Conductor  %>
             <p>
-            <%= f.collection_select :driver_id, Driver.all, :id, :fullName, type: "button", include_blank: "Seleccione conductor", class: "btn btn-default btn-sm dropdown-toggle"%> 
+            <%= f.collection_select :driver_id, Driver.all, :id, :fullName, type: "button", include_blank: "Seleccione conductor", class: "btn btn-default btn-sm dropdown-toggle"%>
             </p>
           </p>
           <p>
-          <%= f.label :Camión %> 
+          <%= f.label :Camión %>
             <p>
-            <%= f.collection_select :truck_id, Truck.all, :id, :number_plate, type: "button", include_blank: "Seleccione patente", class: "btn btn-default btn-sm dropdown-toggle" %> 
+            <%= f.collection_select :truck_id, Truck.all, :id, :number_plate, type: "button", include_blank: "Seleccione patente", class: "btn btn-default btn-sm dropdown-toggle" %>
             </p>
-          </p> 
+          </p>
 
-          <p> 
-          <%= f.label :Día %> 
-          <div class='input-group date'>  
-            <%= f.text_field :day, class: 'form-control datepicker', autocomplete: "off", placeholder: 'DD-MM-AAAA' %> 
+          <p>
+          <%= f.label :Día %>
+          <div class='input-group date'>
+            <%= f.text_field :day, class: 'form-control datepicker', autocomplete: "off", placeholder: 'DD-MM-AAAA' %>
             <span class="input-group-addon">
               <span class="glyphicon glyphicon-calendar"></span>
-            </span> 
+            </span>
           </div>
 
-     
+
           </P>
-     
+
           <p>
           <%= f.submit "Aceptar", class: "btn btn-primary"%>
           </p>

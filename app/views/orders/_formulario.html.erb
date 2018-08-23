@@ -1,18 +1,21 @@
 
 <body>
+  <div class="row">
+    <div class="col-md-6">
+        <%= form_with(model: order, local: true) do |f| %>
 
-      <div class="col-md-6 col-md-offset-3">  
-        <%= form_for [@client,@product,@order] do |f| %>
-          <% if @order.errors.any? %>
-            <%= pluralize(@order.errors.count, "Errores") %>
-            <% @order.errors.full_messages.each do |error| %>
-              <%= error %>
-            <% end %>
+
+          <% if order.errors.any? %>
+            <ul class = "alert alert-warning">
+              <%= pluralize(order.errors.count, "Errores") %>
+              <% order.errors.full_messages.each do |error| %>
+                <li><%= error %></li>
+              <% end %>
+            </ul>
           <% end %>
-
           <p>
             <%= f.label :Fecha_de_entrega %>
-          
+
             <div class='input-group date' id='datetimepicker'>
               <%= f.text_field :delivery_date, class: 'form-control', autocomplete: 'off' %>
               <span class="input-group-addon">

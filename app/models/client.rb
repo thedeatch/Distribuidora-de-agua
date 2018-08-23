@@ -4,7 +4,7 @@ class Client < ApplicationRecord
 
 
   VALID_NAME_REGEX = /\A[a-zA-Z]+(?: [a-zA-Z]+)?\z/
-  validates :first_name, length: { in: 2..50 }, format: { with: VALID_NAME_REGEX }, presence: true
+  validates :first_name, length: { in: 2..50 , :message => "^ El nombre tiene que estar entre 2 a 50 caracteres"}, format: { with: VALID_NAME_REGEX , :message => "El nombre no tiene formato valido"}
   validates :last_name, length: { in: 2..50 }, format: { with: VALID_NAME_REGEX }, presence: true
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
   validates :email, format: { with: VALID_EMAIL_REGEX }, confirmation: { case_sensitive: false }, uniqueness: true, length: { in: 7..254 }, presence: true
@@ -15,7 +15,7 @@ class Client < ApplicationRecord
 
   #metodos
 
-  def fullName 
+  def fullName
   	[first_name, last_name].compact.join(' ')
   end
 
