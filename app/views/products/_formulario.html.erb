@@ -2,13 +2,12 @@
 <body>
   <div class="row">
     <div class="col-md-6">
-        <%= form_with(model: product, local: true) do |f| %>
+      <%= form_for(@product) do |f| %>
 
-
-          <% if product.errors.any? %>
+          <% if @product.errors.any? %>
             <ul class = "alert alert-warning">
               <%= pluralize(product.errors.count, "Errores") %>
-              <% product.errors.full_messages.each do |error| %>
+              <% @product.errors.full_messages.each do |error| %>
                 <li><%= error %></li>
               <% end %>
             </ul>

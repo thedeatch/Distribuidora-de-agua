@@ -3,13 +3,13 @@
 <body>
   <div class="row">
     <div class="col-md-6">
-        <%= form_with(model: truck, local: true) do |f| %>
+        <%= form_for(@truck) do |f| %>
 
 
-          <% if truck.errors.any? %>
+          <% if @truck.errors.any? %>
             <ul class = "alert alert-warning">
-              <%= pluralize(truck.errors.count, "Errores") %>
-              <% truck.errors.full_messages.each do |error| %>
+              <%= pluralize(@truck.errors.count, "Errores") %>
+              <% @truck.errors.full_messages.each do |error| %>
                 <li><%= error %></li>
               <% end %>
             </ul>

@@ -2,13 +2,13 @@
 <body>
   <div class="row">
     <div class="col-md-6">
-        <%= form_with(model: driver, local: true) do |f| %>
+        <%= form_for(@driver) do |f| %>
 
 
-          <% if driver.errors.any? %>
+          <% if @driver.errors.any? %>
             <ul class = "alert alert-warning">
-              <%= pluralize(driver.errors.count, "Errores") %>
-              <% driver.errors.full_messages.each do |error| %>
+            <%= pluralize(@driver.errors.count, "Errores") %>
+            <% @driver.errors.full_messages.each do |error| %>
                 <li><%= error %></li>
               <% end %>
             </ul>
