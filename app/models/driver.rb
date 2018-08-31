@@ -5,9 +5,9 @@ class Driver < ApplicationRecord
 
     VALID_NAME_REGEX = /\A[a-zA-Z]+(?: [a-zA-Z]+)?\z/
     validates :first_name, length: { in: 2..50 , :message => "^ El nombre tiene que estar entre 2 a 50 caracteres"}, format: { with: VALID_NAME_REGEX , :message => "El nombre no tiene formato valido"}
-    validates :last_name, presence: {message: 'ingrese apellido'}, length: { in: 2..50 }, format: {with: VALID_NAME_REGEX}
+    validates :last_name, presence: {message: 'ingrese apellido'}, length: { in: 2..50 , :message => " El apellido tiene que estar entre 2 a 50 caracteres"}, format: {with: VALID_NAME_REGEX}
     validate :fecha_nacimiento_futuro, :mayor_de_edad
-    validates :income, presence: {message: 'ingrese sueldo'}, numericality: { only_integer: true } 
+    validates :income, presence: {message: 'ingrese sueldo'}, numericality: { only_integer: true , :message => "El sueldo no tiene formato valido"}
     validate :incomeMin
     validates :license, inclusion: { in: [ true, false ] }
     validates :rut, rut: true, uniqueness: true, presence: true
@@ -28,7 +28,7 @@ class Driver < ApplicationRecord
       if !income.blank? && income < 276000
         errors.add(:income, "El valor del sueldo debe ser superior a 276000 CLP")
       end
-    end 
+    end
 
     #metodos
 
