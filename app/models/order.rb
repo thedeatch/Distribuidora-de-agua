@@ -14,7 +14,7 @@ class Order < ApplicationRecord
   validates :delivery_date, presence: true
   validate :fecha_de_entrega_pasado
   validate :fecha_de_entrega_futuro
-  validates :amount, presence: true, numericality: { only_integer: true , :message => "La cantidad no tiene formato valido"}
+  validates :amount, presence: true, numericality: { only_integer: true }
   validate :stock_negativo
 
 
