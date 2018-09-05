@@ -1,0 +1,46 @@
+
+
+<% provide(:title, "Usuarios") %>
+<html>
+  <head>
+    <meta charset="UTF-8">
+
+  </head>
+  <body>
+    <div class="container">
+    <p>
+    <h1>Usuarios</h1>
+    </p>  
+    <div class="table-responsive-md">
+    <table class="table table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Email</th> 
+          <th>Rol</th>
+          <th>Opciones</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td><%= user.first_name %></td>
+            <td><%= user.last_name %></td>
+            <td><%= user.email %></td>
+            <td><%= user.role%></td>
+         
+
+
+                  
+              
+          </tr>
+          <% end %>
+      </tbody>
+    </table> 
+    <%= link_to 'Agregar' , new_user_registration_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
+  </body>
+</html>

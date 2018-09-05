@@ -36,14 +36,15 @@
 
             <td><%= link_to edit_client_path(client), class: "btn btn-primary" do %>
                   <i class="fas fa-user-edit"></i> Editar
+                <% end %> 
+                <% if can? :destroy, client %>
+                  <%= link_to client_path(client),
+                            method: :delete,
+                            data: {confirm: '¿Estas seguro?'}, class: "btn btn-danger" do %>
+                              <i class="far fa-trash-alt">  </i> Eliminar </td>
+                  
+                  <% end %>
                 <% end %>
-                <%= link_to client_path(client),
-                          method: :delete,
-                          data: {confirm: '¿Estas seguro?'}, class: "btn btn-danger" do %>
-                            <i class="far fa-trash-alt">  </i> Eliminar </td>
-
-                <% end %>
-
           </tr>
           <% end %>
       </tbody>

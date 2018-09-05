@@ -33,14 +33,15 @@
             <td><%= driver.birthday%></td>
             <td><%= link_to edit_driver_path(driver), class: "btn btn-primary" do %>
                   <i class="fas fa-user-edit"></i> Editar
-                <% end %>
-                <%= link_to driver_path(driver),
-                          method: :delete,
-                          data: {confirm: '¿Estas seguro?'}, class: "btn btn-danger" do %>
-                            <i class="far fa-trash-alt">  </i> Eliminar </td>
+                <% end %> 
+                <% if can? :destroy, driver %>
+                  <%= link_to driver_path(driver),
+                            method: :delete,
+                            data: {confirm: '¿Estas seguro?'}, class: "btn btn-danger" do %>
+                              <i class="far fa-trash-alt">  </i> Eliminar </td>
 
+                  <% end %>
                 <% end %>
-
           </tr>
           <% end %>
       </tbody>

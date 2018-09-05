@@ -6,7 +6,7 @@
 
           <% if @product.errors.any? %>
             <ul class = "alert alert-warning">
-              <%= pluralize(product.errors.count, "Errores") %>
+              <%= pluralize(@product.errors.count, "Errores") %>
               <% @product.errors.full_messages.each do |error| %>
                 <li><%= error %></li>
               <% end %>

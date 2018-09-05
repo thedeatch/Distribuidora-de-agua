@@ -1,7 +1,16 @@
 <% provide(:title, "Inicio")%>
-<% if user_signed_in? %> 
-<% else %> 
+<% if user_signed_in? %>  
+	<div class="container">
+	  <div class="jumbotron">
+	    <h1>Sistema de distribuidora de agua</h1> 
+	    <p>Bienvenido <%= current_user.fullName %>!</p>  
+		<% if current_user.role == "admin" %>
+	   		<p>Ha ingresado como Administrador</p> 
+	   	<% elsif current_user.role == "employee" %> 
+	   		<p>Ha ingresado como Empleado</p> 
+		<% end %>
+
+	  </div>
+	</div>
+<% else %>  
 <% end %>
-<body>
-  <h1>Bienvenido</h1>
-</body>

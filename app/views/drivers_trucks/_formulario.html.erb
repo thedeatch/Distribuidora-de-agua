@@ -28,15 +28,10 @@
 
           <p>
           <%= f.label :Día %>
-          <div class='input-group date'>
+          <p>
             <%= f.text_field :day, class: 'form-control datepicker', autocomplete: "off", placeholder: 'DD-MM-AAAA' %>
-            <span class="input-group-addon">
-              <span class="glyphicon glyphicon-calendar"></span>
-            </span>
-          </div>
 
-
-          </P>
+          </p>
 
           <p>
           <%= f.submit "Aceptar", class: "btn btn-primary"%>

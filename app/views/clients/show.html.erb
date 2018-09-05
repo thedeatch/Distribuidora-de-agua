@@ -1,4 +1,15 @@
-<h1><%=  @client.first_name %></h1>
-<h1><%=  @client.last_name %></h1>
+<div class="panel panel-primary">
+  <div class="panel-heading"><b>Informacion Cliente</b><td>
+  	<%= link_to edit_client_path(@client), class: "btn btn-default" do %> 
+		<i class="fas fa-user-edit"></i> Editar cliente</td>
+	<% end %>
+  </div>
+  <div class="panel-body"> 
+	<li><b>Nombre: <%=  @client.fullName %></b></li> 
+	<li><b>Email: <%=  @client.email %></b></li>
+	<li><b>Telefono contacto: <%=  @client.phone %></b></li> 
+	<li><b>RUT: <%=  @client.rut %></b></li> 
+	<li><b>Direccion: <%=  @client.address %></b></li> 
 
-<p>Find me in app/views/clients/mostrar.html.erb</p>
+  </div>
+</div>

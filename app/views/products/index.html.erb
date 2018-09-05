@@ -32,14 +32,16 @@
             <td><%= product.detail %></td>
             <td><%= link_to edit_product_path(product), class: "btn btn-primary" do %>
                   <i class="far fa-edit"></i> Editar
-                <% end %>
-                <%= link_to product_path(product),
-                          method: :delete,
-                          data: {confirm: '¿Estas seguro?'}, class: "btn btn-danger" do %>
-                            <i class="far fa-trash-alt">  </i> Eliminar </td>
+                <% end %> 
+                <% if can? :destroy, product %>
 
-                <% end %>
+                  <%= link_to product_path(product),
+                            method: :delete,
+                            data: {confirm: '¿Estas seguro?'}, class: "btn btn-danger" do %>
+                              <i class="far fa-trash-alt">  </i> Eliminar </td>
 
+                  <% end %>
+                <% end %>
 
           </tr>
           <% end %>

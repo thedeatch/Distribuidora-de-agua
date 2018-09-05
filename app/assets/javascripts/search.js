@@ -16,16 +16,6 @@ document.addEventListener('turbolinks:load', function() {
 				listLocation: "drivers", 
 				header: "<strong>Conductores</strong>", 
 
-			},  
-			{ 
-				listLocation: "trucks", 
-				header: "<strong>Camiones</strong>", 
-
-			}, 
-			{
-				listLocation: "products", 
-				header: "<strong>Productos</strong>",
-
 			}
 		], 
 		list: {  

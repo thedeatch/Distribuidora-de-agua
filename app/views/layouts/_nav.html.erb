@@ -42,7 +42,7 @@
                 <li><a><%= link_to "Asignar conductor a camión", new_drivers_truck_url%></a></li> 
                 <li><a><%= link_to "Ver asignaciones", drivers_trucks_path%></a></li> 
               </ul>
-            </li>
+            </li> 
             <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#">Camiones <span class="caret"></span></a>
               <ul class="dropdown-menu">
@@ -71,7 +71,14 @@
         	<li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#"> <i class="fas fa-user"></i> <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a><%= link_to current_user.email, edit_user_registration_path %></a></li>
+              <li><a><%= link_to current_user.email %></a></li>  
+              <li><a><%= link_to current_user.fullName %></a></li>  
+              <% if current_user.role == "admin" %>
+                  <li><a>Administrador</a></li> 
+                <% elsif current_user.role == "employee" %> 
+                  <li><a>Empleado</a></li> 
+              <% end %>
+              <li><a><%= link_to "Editar Cuenta", edit_user_registration_path %></a></li>
               <li><a><%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete %></a></li>
             </ul>
           </li>
