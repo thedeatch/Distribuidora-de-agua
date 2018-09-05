@@ -1,10 +1,19 @@
 Rails.application.routes.draw do
 
 
-  devise_for :users
-  get "help", to: 'static_pages#help'
+  devise_for :users, :path_prefix => 'us'
+  get "help", to: 'static_pages#help' 
 
-  resources :users, only: [:index]
+  #Rails.application.routes.draw do
+    #devise_for :users, controllers: {
+      #sessions: 'users/sessions', 
+      #registrations: 'users/registrations'    
+  #}
+  #end
+
+
+
+  resources :users
   resources :clients
   resources :drivers
   resources :products
