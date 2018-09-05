@@ -11,10 +11,10 @@ class Order < ApplicationRecord
 
   #validaciones
 
-  validates :delivery_date, presence: true
+  validates :delivery_date, presence: { message: "no puede estar en blanco" }
   validate :fecha_de_entrega_pasado
   validate :fecha_de_entrega_futuro
-  validates :amount, presence: true, numericality: { only_integer: true }
+  validates :amount, presence: { message: "no puede estar en blanco" }, numericality: { only_integer: true , :message => "La cantidad no tiene formato valido"}
   validate :stock_negativo
 
 
