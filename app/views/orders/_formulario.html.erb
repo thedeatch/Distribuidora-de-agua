@@ -20,7 +20,7 @@
             <%= f.label :Fecha_de_entrega %>
 
             <div class='input-group date' id='datetimepicker'>
-              <%= f.text_field :delivery_date, class: 'form-control', autocomplete: 'off' %>
+              <%= f.text_field :delivery_date, class: 'form-control', autocomplete: 'off', placeholder: 'DD-MM-AAAA' %>
               <span class="input-group-addon">
                 <span class="glyphicon glyphicon-calendar"></span>
               </span>
@@ -31,7 +31,7 @@
 
           <p>
           <%= f.label :Cantidad %>
-          <%= f.text_field :amount, class: 'form-control' %>
+          <%= f.text_field :amount, class: 'form-control' , placeholder: 'Cantidad de producto'%>
           </p>
           <p>
           <%= f.label :Cliente %>
