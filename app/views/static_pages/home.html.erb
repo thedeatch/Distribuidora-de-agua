@@ -2,13 +2,20 @@
 <% if user_signed_in? %>  
 	<div class="container">
 	  <div class="jumbotron">
-	    <h1>Sistema de distribuidora de agua</h1> 
-	    <p>Bienvenido <%= current_user.fullName %>!</p>  
-		<% if current_user.role == "admin" %>
-	   		<p>Ha ingresado como Administrador</p> 
+	    <h1>Dashboard</h1> 
+	    <p>Bienvenido <%= current_user.fullName %>!, 	
+	    	<% if current_user.role == "admin" %>
+	   		ha ingresado como Administrador
 	   	<% elsif current_user.role == "employee" %> 
-	   		<p>Ha ingresado como Empleado</p> 
-		<% end %>
+	   		ha ingresado como Empleado
+		<% end %>  </p>  
+		<p>Gráficos</p>
+
+		<h2>Nuevos pedidos</h2> 
+		<%= line_chart charts_new_orders_path %>  
+
+		<h2>Registro de clientes</h2> 
+		<%= line_chart charts_new_clients_path %>
 
 	  </div>
 	</div>

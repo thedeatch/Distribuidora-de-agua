@@ -11,7 +11,11 @@ Rails.application.routes.draw do
   #}
   #end
 
-
+  namespace :charts do  
+    get "new-clients" 
+    get "new-orders" 
+    get "income-orders"
+  end
 
   resources :users
   resources :clients

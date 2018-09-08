@@ -36,7 +36,10 @@
 
             <td><%= link_to edit_client_path(client), class: "btn btn-primary" do %>
                   <i class="fas fa-user-edit"></i> Editar
-                <% end %> 
+                <% end %>  
+                <%= link_to client_path(client), class: "btn btn-info" do %> 
+                  <i class="fas fa-info"></i> Detalles 
+                <% end %>
                 <% if can? :destroy, client %>
                   <%= link_to client_path(client),
                             method: :delete,

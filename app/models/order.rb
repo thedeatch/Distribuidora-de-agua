@@ -48,5 +48,9 @@ class Order < ApplicationRecord
   def volver_al_stock
     product.stock += self.amount
     product.save
+  end 
+
+  def calcular_valor 
+    valor = self.amount*self.product.price
   end
 end

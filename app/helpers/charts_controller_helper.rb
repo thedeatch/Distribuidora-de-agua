@@ -1,0 +1,2 @@
+module ChartsControllerHelper
+end

@@ -22,7 +22,9 @@
 //= require turbolinks 
 //= require moment
 //= require bootstrap-datetimepicker
-//= require bootstrap-datepicker
+//= require bootstrap-datepicker 
+//= require Chart.bundle 
+//= require chartkick
 //= require_tree .
 
 // esto es para que los dropdowns del navbar funcionen correctamente

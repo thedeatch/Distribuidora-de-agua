@@ -17,7 +17,8 @@
           <th>RUT</th>
           <th>Sueldo</th>
           <th>Vigencia</th>
-          <th>Fecha de nacimiento</th>
+          <th>Fecha de nacimiento</th> 
+          <th>Edad</th>          
           <th>Opciones</th>
 
         </tr>
@@ -29,11 +30,15 @@
             <td><%= driver.last_name %></td>
             <td><%= driver.rut %></td>
             <td><%= driver.income %></td>
-            <td><%= driver.license%></td>
-            <td><%= driver.birthday%></td>
+            <td><%= driver.estadoLicencia%></td>
+            <td><%= driver.birthday%></td> 
+            <td><%= driver.age%></td>
             <td><%= link_to edit_driver_path(driver), class: "btn btn-primary" do %>
                   <i class="fas fa-user-edit"></i> Editar
-                <% end %> 
+                <% end %>  
+                <%= link_to driver_path(driver), class: "btn btn-info" do %> 
+                  <i class="fas fa-info"></i> Detalles 
+                <% end %>
                 <% if can? :destroy, driver %>
                   <%= link_to driver_path(driver),
                             method: :delete,
