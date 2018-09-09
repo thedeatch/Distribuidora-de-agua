@@ -8,28 +8,28 @@
     <p>
     <h1>Conductores</h1>
     </p>
-    <div class="table-responsive-md">
-    <table class="table table-striped">
+    <div>  
+      <%= render 'layouts/searchbyname'%>
+    </div></br>
+    <div style="overflow-x:auto;"> 
+    <table class="table table-striped" id="myTable">
       <thead class="thead-dark">
         <tr>
           <th>Nombre</th>
-          <th>Apellido</th>
           <th>RUT</th>
           <th>Sueldo</th>
           <th>Vigencia</th>
           <th>Fecha de nacimiento</th> 
           <th>Edad</th>          
           <th>Opciones</th>
-
         </tr>
       </thead>
       <tbody>
         <% @drivers.each do |driver| %>
           <tr>
-            <td><%= driver.first_name %></td>
-            <td><%= driver.last_name %></td>
+            <td><%= driver.fullName %></td>
             <td><%= driver.rut %></td>
-            <td><%= driver.income %></td>
+            <td><%= driver.income %> CLP</td>
             <td><%= driver.estadoLicencia%></td>
             <td><%= driver.birthday%></td> 
             <td><%= driver.age%></td>

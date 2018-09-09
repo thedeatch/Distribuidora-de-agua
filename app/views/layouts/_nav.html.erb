@@ -60,16 +60,7 @@
             <% end %>
           </ul>  
 
-	        <%= form_with url: search_path, local: true, method: :get, html: { class: "navbar-form navbar-left" } do |form| %>  
-	        	<div class = "input-group"> 
-	        		<%= form.text_field :q, placeholder: "Buscar", data: { behavior: "autocomplete" }, class: "form-control" %> 
-	        		<div class = "input-group-btn"> 
-			        	<%= form.button class: "btn btn-success" do %>  	
-										<i class="fas fa-search"></i>
-			        	<% end %>
-	        		</div> 
-	        	</div>
-	        <% end %>	
+
         		
 
         <% else %>  
