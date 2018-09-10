@@ -4,4 +4,44 @@
 
 </head>
 <h1>Actualizar camión</h1>
-<%= render 'formulario' %>
+
+
+<body>
+  <div class="row">
+    <div class="col-md-6">
+        <%= form_for(@truck) do |f| %>
+
+
+          <% if @truck.errors.any? %>
+            <ul class = "alert alert-warning">
+              <%= pluralize(@truck.errors.count, "Errores") %>
+              <% @truck.errors.full_messages.each do |error| %>
+                <li><%= error %></li>
+              <% end %>
+            </ul>
+          <% end %>
+          <p>
+          <%= f.label :Modelo %>
+          <%= f.text_field :name, class: 'form-control', placeholder: "Ingresa modelo del vehiculo" %>
+          </p>
+          <p>
+          <%= f.label :Carga %>
+          <%= f.text_field :load, class: 'form-control' , placeholder: "Ingresa peso de la carga" %>
+          </p>
+          <p>
+          <%= f.label :Patente %>
+          <%= f.text_field :number_plate, class: 'form-control', style: 'text-transform:uppercase;', placeholder: "Ej : ABCD12" %>
+
+          </p>
+          <p>
+          <%= f.label :Estado %>
+          <%= f.select :detail, options_for_select(['Operativo', 'En mantención', 'Fuera de servicio']), class: 'form-control', include_blank: "Estado del camion"  %>
+          </p>
+          <p>
+          <%= f.submit "Aceptar", class: "btn btn-primary" %>
+          </p>
+        <% end %>
+
+      </div>
+  </div>
+</body>

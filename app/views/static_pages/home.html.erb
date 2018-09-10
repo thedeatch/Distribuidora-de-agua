@@ -10,12 +10,16 @@
 	   		ha ingresado como Empleado
 		<% end %>  </p>  
 		<p>Gráficos</p>
+		
+		<h2>Registro de clientes</h2> 
+		<%= line_chart charts_new_clients_path %>
 
 		<h2>Nuevos pedidos</h2> 
 		<%= line_chart charts_new_orders_path %>  
 
-		<h2>Registro de clientes</h2> 
-		<%= line_chart charts_new_clients_path %>
+		<h2>Estado de pedidos</h2> 
+		<%= pie_chart charts_order_status_path %>   
+
 
 	  </div>
 	</div>

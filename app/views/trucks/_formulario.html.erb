@@ -27,10 +27,7 @@
           <%= f.text_field :number_plate, class: 'form-control', style: 'text-transform:uppercase;', placeholder: "Ej : ABCD12" %>
 
           </p>
-          <p>
-          <%= f.label :Estado %>
-          <%= f.select :detail, options_for_select(['Operativo', 'En mantención', 'Fuera de servicio']), class: 'form-control', include_blank: "Estado del camion"  %>
-          </p>
+
           <p>
           <%= f.submit "Aceptar", class: "btn btn-primary" %>
           </p>

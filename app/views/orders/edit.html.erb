@@ -1,6 +1,6 @@
 <% provide(:title, "Modificar Pedido")%>
 <% provide(:path, edit_order_path(@order))%>
-
+<h1>Modificar Pedido</h1>
 <body>
   <div class="row">
     <div class="col-md-6">
@@ -17,18 +17,22 @@
                 <li><%= error %></li>
               <% end %>
             </ul>
-          <% end %>
+          <% end %> 
           <p>
-            <%= f.label :Fecha_de_entrega %>
+          <%= f.label :Estado_del_pedido %></br>
+          <%= f.select :state, options_for_select(['Pendiente', 'Realizado']), class: 'form-control' %>
+          </p>
 
-            <div class='input-group date' id='datetimepicker'>
-              <%= f.text_field :delivery_date, class: 'form-control', autocomplete: 'off', placeholder: 'DD-MM-AAAA' %>
-              <span class="input-group-addon">
-                <span class="glyphicon glyphicon-calendar"></span>
-              </span>
-            </div>
 
-          </P>
+ 
+          <p>
+          <%= f.label :Fecha_de_entrega %>
+          <p>
+            <%= f.text_field :delivery_date, class: 'form-control datepicker', autocomplete: "off", placeholder: 'DD-MM-AAAA' %>
+
+          </p>
+          </p>
+
 
 
           <p>

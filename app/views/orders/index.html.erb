@@ -12,10 +12,11 @@
       <thead class="thead-dark">
         <tr>
           <th>Número</th>
+          <th>Estado</th>          
           <th>Fecha Entrega</th>
           <th>Cantidad</th>
           <th>RUT Cliente</th>
-          <th>Nombre Cliente</th>
+          <th>Cliente</th>
           <th>Camión</th>
           <th>Producto</th>
           <th>Valor</th>
@@ -25,7 +26,8 @@
       <tbody>
         <% @orders.each do |order| %>
           <tr>
-            <td><%= order.id %></td>
+            <td><%= order.id %></td>  
+            <td><%= order.state %></td>             
             <td><%= order.delivery_date %></td>
             <td><%= order.amount %></td>
             <td><%= order.client.rut %></td>

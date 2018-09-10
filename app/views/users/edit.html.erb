@@ -13,32 +13,7 @@
         <%= f.label :apellido %><br/>
         <%= f.text_field :last_name, autofocus: true, autocomplete: "off", class: 'form-control' %>
       </div>
-  
 
-      <div class="field">
-        <%= f.label :email %><br/>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
-      </div>
-
-
-      <div class="field">
-        <%= f.label :contraseña_nueva %>
-        <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
-        <% if @minimum_password_length %>
-          <br />
-          <em> mínimo <%= @minimum_password_length %> caracteres</em>
-        <% end %>
-      </div>
-
-      <div class="field">
-        <%= f.label :confirmar_contraseña %><br/>
-        <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
-      </div>
-
-      <div class="field">
-        <%= f.label :contraseña_actual %> <i>(necesitamos tu contraseña actual para confirmar el cambio)</i><br/>
-        <%= f.password_field :current_password, autocomplete: "off", class: 'form-control' %>
-      </div> 
       <div class="field">
           <%=f.label :Rol %>
           <div>

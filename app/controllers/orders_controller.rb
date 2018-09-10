@@ -59,10 +59,9 @@ class OrdersController < ApplicationController
     end
   end 
 
-  #def cambiar_estado 
+  #def estado 
 
     #@order = Order.find(params[:id]) 
-
 
   #end
 

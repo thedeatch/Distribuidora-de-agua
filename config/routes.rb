@@ -14,16 +14,15 @@ Rails.application.routes.draw do
   namespace :charts do  
     get "new-clients" 
     get "new-orders" 
-    get "income-orders"
+    get "income-orders" 
+    get "order-status"
   end
 
   resources :users
   resources :clients
   resources :drivers
   resources :products
-  resources :orders #do 
-    #get 'cambiar_estado', :on => :member, :as => cambiar_estado
-  #end
+  resources :orders 
   resources :trucks 
   resources :drivers_trucks 
 
