@@ -7,12 +7,11 @@
     <div class="container">
     <h1>Asignaciones</h1>
 
-    <div class="table-responsive-md">
+    <div style="overflow-x:auto;">
     <table class="table table-striped">
       <thead class="thead-dark">
         <tr>
           <th>Conductor</th> 
-          <th> </th>
           <th>RUT Conductor</th>
           <th>Patente Camión</th>
           <th>Modelo</th> 
@@ -25,20 +24,22 @@
       <tbody>
         <% @drivers_trucks.each do |drivers_truck| %>
           <tr>
-            <td><%= drivers_truck.driver.first_name %></td> 
-            <td><%= drivers_truck.driver.last_name %></td>
+            <td><%= drivers_truck.driver.fullName %></td> 
             <td><%= drivers_truck.driver.rut %></td>
             <td><%= drivers_truck.truck.number_plate %></td>
             <td><%= drivers_truck.truck.name %></td>
             <td><%= drivers_truck.day %></td>
             <td><%= link_to edit_drivers_truck_path(drivers_truck), class: "btn btn-primary" do %>
                   <i class="far fa-edit"></i> Editar
-                <% end %>
-                <%= link_to drivers_truck_path(drivers_truck),
-                          method: :delete,
-                          data: {confirm: '¿Estas seguro?'}, class: "btn btn-danger" do %>
-                            <i class="far fa-trash-alt">  </i> Eliminar </td>
+                <% end %> 
+                <% if can? :destroy, drivers_truck %>
 
+                  <%= link_to drivers_truck_path(drivers_truck),
+                            method: :delete,
+                            data: {confirm: '¿Estas seguro?'}, class: "btn btn-danger" do %>
+                              <i class="far fa-trash-alt">  </i> Eliminar </td>
+
+                  <% end %>
                 <% end %>
 
           </tr>

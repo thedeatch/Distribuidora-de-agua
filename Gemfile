@@ -54,7 +54,10 @@ gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 gem 'devise'
 gem 'rails-jquery-autocomplete'
 gem 'ransack', '~> 1.8', '>= 1.8.8'
-gem "select2-rails"
+gem "select2-rails" 
+gem 'cancancan', '~> 2.0'  
+gem 'chartkick', '~> 1.4', '>= 1.4.1' 
+gem 'groupdate'
 
 
 

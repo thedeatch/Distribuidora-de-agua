@@ -15,11 +15,11 @@
           <% end %>
           <p>
           <%= f.label :Nombre %>
-          <%= f.text_field :first_name, class: 'form-control', autocomplete: 'off', style: 'text-transform:capitalize;' , placeholder: "Ingresa tu nombre" %>
+          <%= f.text_field :first_name, class: 'form-control', autocomplete: 'off', style: 'text-transform:capitalize;' , placeholder: "Ingresa nombre" %>
           </p>
           <p>
           <%= f.label :Apellido %>
-          <%= f.text_field :last_name, class: 'form-control', autocomplete: 'off', style: 'text-transform:capitalize;' , placeholder: "Ingresa tu apellido" %>
+          <%= f.text_field :last_name, class: 'form-control', autocomplete: 'off', style: 'text-transform:capitalize;' , placeholder: "Ingresa apellido" %>
           </p>
           <p>
           <%= f.label :RUT %>
@@ -27,16 +27,9 @@
           </p>
           <p>
           <%= f.label :Sueldo %>
-          <%= f.text_field :income, class: 'form-control', autocomplete: 'off' , placeholder: "10000" %>
+          <%= f.text_field :income, class: 'form-control', autocomplete: 'off' , placeholder: "276000 CLP" %>
           </p>
           <p>
-          <%=f.label :Vigencia %>
-          <div>
-          <%= f.label :Vigencia, "Activo ", :value => true %>
-          <%= f.radio_button :license, true %>
-          <%= f.label :Vigencia, " Inactivo", :value => false %>
-          <%= f.radio_button :license, false %>
-          </div>
           </p>
           <p>
           <%= f.label :Fecha_Nacimiento %>

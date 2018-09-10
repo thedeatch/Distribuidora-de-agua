@@ -7,21 +7,19 @@
     <div class="container">
     <h1>Pedidos</h1>
 
-    <div class="table-responsive-md">
-    <table class="table table-striped">
+    <div style="overflow-x:auto;">
+    <table class="table table-hover">
       <thead class="thead-dark">
         <tr>
           <th>Número</th>
           <th>Fecha Entrega</th>
           <th>Cantidad</th>
           <th>RUT Cliente</th>
-          <th>Nombre </th>
-          <th>Apellido </th>
+          <th>Nombre Cliente</th>
           <th>Camión</th>
           <th>Producto</th>
+          <th>Valor</th>
           <th>Opciones</th>
-
-
         </tr>
       </thead>
       <tbody>
@@ -31,20 +29,22 @@
             <td><%= order.delivery_date %></td>
             <td><%= order.amount %></td>
             <td><%= order.client.rut %></td>
-            <td><%= order.client.first_name %></td>
-            <td><%= order.client.last_name %></td>
+            <td><%= order.client.fullName %></td>
             <td><%= order.truck.number_plate %></td>
             <td><%= order.product.liters %></td>
+            <td><%= order.calcular_valor %> CLP</td>
             <td><%= link_to edit_order_path(order), class: "btn btn-primary" do %>
                   <i class="far fa-edit"></i> Editar
                 <% end %>
-                <%= link_to order_path(order),
-                          method: :delete,
-                          data: {confirm: '¿Estas seguro?'}, class: "btn btn-danger" do %>
-                            <i class="far fa-trash-alt">  </i> Eliminar </td>
+                <% if can? :destroy, order %>
 
+                  <%= link_to order_path(order),
+                            method: :delete,
+                            data: {confirm: '¿Estas seguro?'}, class: "btn btn-danger" do %>
+                              <i class="far fa-trash-alt">  </i> Eliminar </td>
+
+                  <% end %>
                 <% end %>
-
           </tr>
           <% end %>
       </tbody>

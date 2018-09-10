@@ -15,11 +15,13 @@
           <% end %>
           <p>
           <%= f.label :first_name, "Nombre" %>
+
           <%= f.text_field :first_name, class: 'form-control', autocomplete: 'off', placeholder: "Ingresa nombre" %>
           </p>
           <p>
           <%= f.label :Apellido %>
           <%= f.text_field :last_name, class: 'form-control', autocomplete: 'off', placeholder: "Ingresa apellido" %>
+
           </p>
           <p>
           <%= f.label :Correo %>
@@ -27,7 +29,7 @@
           </p>
           <p>
           <%= f.label :Telefono %>
-          <%= f.text_field :phone, class: 'form-control', autocomplete: 'off' , placeholder: "+56 9 0000 0000"%>
+          <%= f.text_field :phone, class: 'form-control', autocomplete: 'off' , placeholder: "9 digitos"%>
           </p>
           <p>
           <%= f.label :Direccion %>

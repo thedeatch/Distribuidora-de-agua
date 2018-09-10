@@ -1,4 +1,21 @@
-<h1><%=  @driver.first_name %></h1>
-<h1><%=  @driver.last_name %></h1>
 
-<p>Find me in app/views/driver/mostrar.html.erb</p>
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading"><b>Informacion Conductor</b><td>
+
+  </div>
+  <div class="panel-body"> 
+	<li><b>Nombre: <%=  @driver.fullName %></b></li>
+	<li><b>Fecha de nacimiento: <%=  @driver.birthday %></b></li> 
+	<li><b>Edad: <%=  @driver.age %></b></li> 
+	<li><b>RUT: <%=  @driver.rut %></b></li> 
+	<li><b>Sueldo: <%=  @driver.income %> CLP</b></li> 
+	<li><b>Estado licencia: <%=  @driver.estadoLicencia %></b></li>  
+	<%= link_to edit_driver_path(@driver), class: "btn btn-primary" do %> 
+		<i class="fas fa-user-edit"></i> Editar Conductor</td>
+	<% end %>
+
+  </div> 
+
+</div>

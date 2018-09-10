@@ -1,15 +1,16 @@
 class Driver < ApplicationRecord
-    has_and_belongs_to_many :trucks
+    has_many :drivers_trucks
+    has_many :truck, :through => :drivers_trucks
 
     #validaciones
 
-    VALID_NAME_REGEX = /\A[a-zA-Z]+(?: [a-zA-Z]+)?\z/
-    validates :first_name, length: { in: 2..50 , :message => "El nombre tiene que estar entre 2 a 50 caracteres"}, format: { with: VALID_NAME_REGEX , :message => "El nombre no tiene formato valido"} , presence: { message: "no puede estar en blanco" }
-    validates :last_name, presence: {message: 'ingrese apellido'}, length: { in: 2..50 , :message => " El apellido tiene que estar entre 2 a 50 caracteres"}, format: {with: VALID_NAME_REGEX , message: "es invalido" }
+    VALID_NAME_REGEX = /\A[a-zA-Zñ]+(?: [a-zA-Z]+)?\z/
+    validates :first_name, length: { in: 3..50 , :message => "El nombre debe tener de 3 a 50 caracteres"}, format: { with: VALID_NAME_REGEX , :message => "El nombre no tiene formato valido"} , presence: { message: "no puede estar en blanco" }
+    validates :last_name, presence: {message: 'ingrese apellido'}, length: { in: 3..50 , :message => " El apellido debe tener de 3 a 50 caracteres"}, format: {with: VALID_NAME_REGEX , message: "es invalido" }
     validate :fecha_nacimiento_futuro, :mayor_de_edad
     validates :income, presence: {message: 'ingrese sueldo'}, numericality: { only_integer: true , :message => "El sueldo no tiene formato valido"}
     validate :incomeMin
-    validates :license, inclusion: { in: [ true, false ], :message => "Selecciona una de las opciones en Vigencia" }
+    #validates :license, inclusion: { in: [ true, false ], :message => "Selecciona una de las opciones en Vigencia" }
     validates :rut, rut: { message: "es invalido" }, uniqueness: { message: "Ya existe" }, presence: { message: "no puede estar en blanco" }
 
     def fecha_nacimiento_futuro
@@ -39,6 +40,14 @@ class Driver < ApplicationRecord
     def age
       now = Time.now.utc.to_date
       now.year - birthday.year - (birthday.to_date.change(:year => now.year) > now ? 1 : 0)
+    end 
+
+    def estadoLicencia 
+      if license == true 
+        "Licencia al dia" 
+      else 
+        "licencia caducada" 
+      end
     end
 
 end

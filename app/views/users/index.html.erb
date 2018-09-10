@@ -1,0 +1,53 @@
+
+
+<% provide(:title, "Usuarios") %>
+<html>
+  <head>
+    <meta charset="UTF-8">
+
+  </head>
+  <body>
+    <div class="container">
+    <p>
+    <h1>Usuarios</h1>
+    </p> 
+    <div>  
+      <%= render 'layouts/searchbyname'%>
+    </div></br>  
+    <div style="overflow-x:auto;">
+    <table class="table table-striped" id="myTable">
+      <thead class="thead-dark">
+        <tr>
+          <th>Nombre</th>
+          <th>Email</th> 
+          <th>Rol</th> 
+          <th>Opciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td><%= user.fullName %></td>
+            <td><%= user.email %></td>
+            <td><%= user.role%></td>
+             <td><%= link_to edit_user_path(user), class: "btn btn-primary" do %>
+                <i class="fas fa-user-edit"></i> Editar
+                <% end %> 
+                <% if can? :destroy, user %>
+                  <%= link_to user_path(user),
+                            method: :delete,
+                            data: {confirm: '¿Estas seguro?'}, class: "btn btn-danger" do %>
+                              <i class="far fa-trash-alt">  </i> Eliminar </td>
+
+                  <% end %>
+                <% end %>               
+              
+          </tr>
+          <% end %>
+      </tbody>
+    </table> 
+
+    </div>
+  </div>
+  </body>
+</html>

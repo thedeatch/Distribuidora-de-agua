@@ -6,15 +6,16 @@
 
           <% if @product.errors.any? %>
             <ul class = "alert alert-warning">
-              <%= pluralize(product.errors.count, "Errores") %>
+              <%= pluralize(@product.errors.count, "Errores") %>
               <% @product.errors.full_messages.each do |error| %>
                 <li><%= error %></li>
               <% end %>
             </ul>
           <% end %>
           <p>
-          <%= f.label :Litros %>
-          <%= f.text_field :liters, class: 'form-control' , placeholder: "Ingresar el total de litros ej: 1.0 " %>
+          <%= f.label :Litros %></br>
+          <%= f.select :liters, options_for_select([1.5,2,2.5,3,20]), include_blank: "Seleccione litros" %>
+
           </p>
           <p>
           <%= f.label :Precio %>
@@ -29,9 +30,8 @@
           <%= f.text_field :stock, class: 'form-control',placeholder: "Stock" %>
           </p>
           <p>
-          <%= f.label :Detalles %>
-          <%= f.text_field :detail, class: 'form-control',placeholder: "Especificacion del producto"  %>
-          
+          <%= f.label :Detalles %></br>
+          <%= f.select :detail, options_for_select(['botella 1.5 lts', 'botella 2.0 lts', 'botella 2.5 lts', 'botella 3 lts', 'dispensador 20 lts']), class: 'form-control', include_blank: "Especificacion del producto"  %>
           </p>
           <p>
           <%= f.submit "Aceptar", class: "btn btn-primary" %>

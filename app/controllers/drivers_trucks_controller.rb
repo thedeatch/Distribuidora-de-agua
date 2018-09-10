@@ -1,6 +1,7 @@
 class DriversTrucksController < ApplicationController
 
-  before_action :authenticate_user!
+  before_action :authenticate_user! 
+  load_and_authorize_resource
 
 
   def index 
@@ -38,7 +39,7 @@ class DriversTrucksController < ApplicationController
     @drivers_truck = DriversTruck.find(params[:id])
 
 
-    if @drivers_truck.update(driver_truck_params) 
+    if @drivers_truck.update(drivers_truck_params) 
       flash[:success] = "Se ha modificado la asignación" 
       redirect_to drivers_trucks_path 
     else 
