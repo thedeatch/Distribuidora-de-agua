@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20180910013532) do
     t.string "last_name"
     t.date "birthday"
     t.integer "income"
-    t.boolean "license", default: true
+    t.boolean "license"
     t.string "rut"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

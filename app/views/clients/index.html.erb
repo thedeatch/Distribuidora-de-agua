@@ -7,27 +7,27 @@
   <body>
     <div class="container">
     <p>
-    <h1>Clientes</h1> 
+    <h1>Clientes</h1>
     </p>  
-    <div>  
-      <%= render 'layouts/searchbyname'%>
-    </div></br>
-    <div style="overflow-x:auto;">
-    <table class="table table-striped", id="myTable">
+    <div class="table-responsive-md">
+    <table class="table table-striped">
       <thead class="thead-dark">
         <tr>
           <th>Nombre</th>
+          <th>Apellido</th>
           <th>RUT</th>
           <th>Email</th>
           <th>Teléfono</th>
           <th>Dirección</th>
           <th>Opciones</th>
+
         </tr>
       </thead>
       <tbody>
         <% @clients.each do |client| %>
           <tr>
-            <td><%= client.fullName %></td>
+            <td><%= client.first_name %></td>
+            <td><%= client.last_name %></td>
             <td><%= client.rut %></td>
             <td><%= client.email %></td>
             <td><%= client.phone%></td>

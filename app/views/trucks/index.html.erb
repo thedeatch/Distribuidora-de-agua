@@ -7,27 +7,26 @@
     <div class="container">
     <p>
     <h1>Camiones</h1>
-    </p> 
-    <div>  
-      <%= render 'layouts/searchbyplate'%>
-    </div></br>
-    <div style="overflow-x:auto;"> 
-    <table class="table table-striped" id="myTable">
+    </p>
+    <div class="table-responsive-md">
+    <table class="table table-striped">
       <thead class="thead-dark">
         <tr>
-          <th>Patente</th>
           <th>Modelo</th>
           <th>Carga (KG)</th>
+          <th>Patente</th>
           <th>Detalles</th>
           <th>Opciones</th>
+
+
         </tr>
       </thead>
       <tbody>
         <% @trucks.each do |truck| %>
           <tr>
-            <td><%= truck.number_plate %></td>
             <td><%= truck.name %></td>
             <td><%= truck.load %></td>
+            <td><%= truck.number_plate %></td>
             <td><%= truck.detail %></td>
             <td><%= link_to edit_truck_path(truck), class: "btn btn-primary" do %>
                   <i class="far fa-edit"></i> Editar

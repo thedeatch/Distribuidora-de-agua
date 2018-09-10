@@ -6,10 +6,9 @@ class DriversTruck < ApplicationRecord
 
   #validaciones
 
-  #validates :day, presence: true, uniqueness: { scope: [:driver_id, :truck_id] }  
-  validates :driver_id, uniqueness: { scope: :truck_id, message: "Conductor solo puede usar un vehiculo a la vez" }
+  validates :day, presence: true 
   validate :fecha_asignacion_pasado 
-  validate :fecha_asignacion_futuro    
+  validate :fecha_asignacion_futuro   
 
 
   def fecha_asignacion_pasado 

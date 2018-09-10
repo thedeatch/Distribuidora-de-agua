@@ -1,6 +1,5 @@
 class Driver < ApplicationRecord
-    has_many :drivers_trucks
-    has_many :truck, :through => :drivers_trucks
+    has_and_belongs_to_many :trucks
 
     #validaciones
 
@@ -10,7 +9,7 @@ class Driver < ApplicationRecord
     validate :fecha_nacimiento_futuro, :mayor_de_edad
     validates :income, presence: {message: 'ingrese sueldo'}, numericality: { only_integer: true , :message => "El sueldo no tiene formato valido"}
     validate :incomeMin
-    #validates :license, inclusion: { in: [ true, false ], :message => "Selecciona una de las opciones en Vigencia" }
+    validates :license, inclusion: { in: [ true, false ], :message => "Selecciona una de las opciones en Vigencia" }
     validates :rut, rut: { message: "es invalido" }, uniqueness: { message: "Ya existe" }, presence: { message: "no puede estar en blanco" }
 
     def fecha_nacimiento_futuro

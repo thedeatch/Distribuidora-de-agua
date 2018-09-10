@@ -7,11 +7,12 @@
     <div class="container">
     <h1>Asignaciones</h1>
 
-    <div style="overflow-x:auto;">
+    <div class="table-responsive-md">
     <table class="table table-striped">
       <thead class="thead-dark">
         <tr>
           <th>Conductor</th> 
+          <th> </th>
           <th>RUT Conductor</th>
           <th>Patente Camión</th>
           <th>Modelo</th> 
@@ -24,7 +25,8 @@
       <tbody>
         <% @drivers_trucks.each do |drivers_truck| %>
           <tr>
-            <td><%= drivers_truck.driver.fullName %></td> 
+            <td><%= drivers_truck.driver.first_name %></td> 
+            <td><%= drivers_truck.driver.last_name %></td>
             <td><%= drivers_truck.driver.rut %></td>
             <td><%= drivers_truck.truck.number_plate %></td>
             <td><%= drivers_truck.truck.name %></td>
