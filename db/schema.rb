@@ -43,7 +43,6 @@ ActiveRecord::Schema.define(version: 20180910013532) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.date "day"
-    t.index ["driver_id", "truck_id"], name: "asignacion unica de conductor a camion", unique: true
   end
 
   create_table "orders", force: :cascade do |t|
@@ -94,8 +93,8 @@ ActiveRecord::Schema.define(version: 20180910013532) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "drivers_trucks", "drivers", on_delete: :cascade
-  add_foreign_key "drivers_trucks", "trucks", on_delete: :cascade
+  add_foreign_key "drivers_trucks", "drivers"
+  add_foreign_key "drivers_trucks", "trucks"
   add_foreign_key "orders", "clients"
   add_foreign_key "orders", "products"
   add_foreign_key "orders", "trucks"

@@ -10,26 +10,24 @@
     <div class="container">
     <p>
     <h1>Usuarios</h1>
-    </p>  
-    <div class="table-responsive-md">
-    <table class="table table-striped">
+    </p> 
+    <div>  
+      <%= render 'layouts/searchbyname'%>
+    </div></br>  
+    <div style="overflow-x:auto;">
+    <table class="table table-striped" id="myTable">
       <thead class="thead-dark">
         <tr>
           <th>Nombre</th>
-          <th>Apellido</th>
           <th>Email</th> 
           <th>Rol</th> 
           <th>Opciones</th>
-
-     
-
         </tr>
       </thead>
       <tbody>
         <% @users.each do |user| %>
           <tr>
-            <td><%= user.first_name %></td>
-            <td><%= user.last_name %></td>
+            <td><%= user.fullName %></td>
             <td><%= user.email %></td>
             <td><%= user.role%></td>
              <td><%= link_to edit_user_path(user), class: "btn btn-primary" do %>

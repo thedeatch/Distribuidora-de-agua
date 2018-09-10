@@ -41,8 +41,7 @@
           </p>
           <p>
           <%= f.label :Cliente %>
-
-
+            <p>
             <%= f.collection_select :client_id, Client.all, :id, :fullName, type: "button", include_blank: "Seleccione cliente", id: "simple-example"%>
             </p>
           </p>
