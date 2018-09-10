@@ -28,8 +28,8 @@
 
           </p>
           <p>
-          <%= f.label :Detalles %>
-          <%= f.text_field :detail, class: 'form-control' , placeholder: "Estado de vehiculo"%>
+          <%= f.label :Estado %>
+          <%= f.select :detail, options_for_select(['Operativo', 'En mantención', 'Fuera de servicio']), class: 'form-control', include_blank: "Estado del camion"  %>
           </p>
           <p>
           <%= f.submit "Aceptar", class: "btn btn-primary" %>

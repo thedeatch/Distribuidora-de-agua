@@ -7,18 +7,18 @@
     <div class="container">
     <p>
     <h1>Camiones</h1>
-    </p> 
-    <div>  
+    </p>
+    <div>
       <%= render 'layouts/searchbyplate'%>
     </div></br>
-    <div style="overflow-x:auto;"> 
+    <div style="overflow-x:auto;">
     <table class="table table-striped" id="myTable">
       <thead class="thead-dark">
         <tr>
           <th>Patente</th>
           <th>Modelo</th>
           <th>Carga (KG)</th>
-          <th>Detalles</th>
+          <th>Estado</th>
           <th>Opciones</th>
         </tr>
       </thead>
@@ -31,7 +31,7 @@
             <td><%= truck.detail %></td>
             <td><%= link_to edit_truck_path(truck), class: "btn btn-primary" do %>
                   <i class="far fa-edit"></i> Editar
-                <% end %> 
+                <% end %>
                 <% if can? :destroy, truck %>
 
                   <%= link_to truck_path(truck),

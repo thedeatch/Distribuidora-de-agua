@@ -15,9 +15,9 @@
           <th>Fecha Entrega</th>
           <th>Cantidad</th>
           <th>RUT Cliente</th>
-          <th>Nombre </th>
+          <th>Nombre Cliente</th>
           <th>Camión</th>
-          <th>Producto</th> 
+          <th>Producto</th>
           <th>Valor</th>
           <th>Opciones</th>
         </tr>
@@ -35,8 +35,8 @@
             <td><%= order.calcular_valor %> CLP</td>
             <td><%= link_to edit_order_path(order), class: "btn btn-primary" do %>
                   <i class="far fa-edit"></i> Editar
-                <% end %>  
-                <% if can? :destroy, order %>                
+                <% end %>
+                <% if can? :destroy, order %>
 
                   <%= link_to order_path(order),
                             method: :delete,

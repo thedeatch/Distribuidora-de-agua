@@ -30,7 +30,7 @@
             <td><%= product.stock %></td>
             <td><%= link_to edit_product_path(product), class: "btn btn-primary" do %>
                   <i class="far fa-edit"></i> Editar
-                <% end %> 
+                <% end %>
                 <% if can? :destroy, product %>
 
                   <%= link_to product_path(product),
