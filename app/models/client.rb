@@ -1,5 +1,5 @@
 class Client < ApplicationRecord
-  has_many :orders, inverse_of: :client
+  has_many :orders, inverse_of: :client, dependent: :destroy
   has_many :products, through: :orders
 
 #/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u

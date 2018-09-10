@@ -27,6 +27,12 @@
 
 
           <p>
+          <%= f.label :Producto %>
+            <p>
+            <%= f.collection_select :product_id, Product.all, :id, :detail, type: "button", include_blank: "Seleccione producto", class: "btn btn-default btn-sm dropdown-toggle"%>
+            </p>
+          </p>
+          <p>
           <%= f.label :Cantidad %>
           <%= f.text_field :amount, class: 'form-control' , placeholder: 'Cantidad de producto'%>
           </p>
@@ -34,12 +40,6 @@
           <%= f.label :Cliente %>
             <p>
             <%= f.collection_select :client_id, Client.all, :id, :fullName, type: "button", include_blank: "Seleccione cliente", id: "simple-example"%>
-            </p>
-          </p>
-          <p>
-          <%= f.label :Producto %>
-            <p>
-            <%= f.collection_select :product_id, Product.all, :id, :liters, type: "button", include_blank: "Seleccione producto", class: "btn btn-default btn-sm dropdown-toggle"%>
             </p>
           </p>
           <p>

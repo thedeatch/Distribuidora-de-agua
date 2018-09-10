@@ -3,7 +3,7 @@ class Truck < ApplicationRecord
     has_many :products, through: :orders
     has_many :clients, through: :orders 
     has_many :drivers_trucks
-    has_many :driver, :through => :drivers_trucks
+    has_many :drivers, :through => :drivers_trucks
 
 
     VALID_NUMBERPLATE_REGEX = /[A-Z]{2}([A-Z]|[0-9]){2}[0-9]{2}/i
@@ -14,6 +14,6 @@ class Truck < ApplicationRecord
     validates :detail, length: { in: 4..254 , :message => "La descripcion requiere mas informacion "}
 
     def uppercase_numberplate
-    	self.number_plate.upcase!
+        self.number_plate.upcase!
     end
 end
