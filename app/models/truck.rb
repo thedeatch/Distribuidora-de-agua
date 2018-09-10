@@ -1,7 +1,7 @@
 class Truck < ApplicationRecord
-    has_many :orders, inverse_of: :truck
+    has_many :orders, inverse_of: :truck, :dependent => :delete_all
     has_many :products, through: :orders
-    has_many :clients, through: :orders 
+    has_many :clients, through: :orders
     has_many :drivers_trucks
     has_many :drivers, :through => :drivers_trucks
 
