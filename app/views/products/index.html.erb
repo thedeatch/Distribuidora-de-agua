@@ -12,11 +12,10 @@
     <table class="table table-striped">
       <thead class="thead-dark">
         <tr>
-          <th>Litros</th>
-          <th>Precio</th>
           <th>Codigo</th>
-          <th>Disponibilidad</th>
+          <th>Precio</th>
           <th>Detalles</th>
+          <th>Disponibilidad</th>
           <th>Opciones</th>
 
 
@@ -25,11 +24,10 @@
       <tbody>
         <% @products.each do |product| %>
           <tr>
-            <td><%= product.liters %></td>
-            <td><%= product.price %></td>
             <td><%= product.product_number %></td>
-            <td><%= product.stock %></td>
+            <td><%= product.price %></td>
             <td><%= product.detail %></td>
+            <td><%= product.stock %></td>
             <td><%= link_to edit_product_path(product), class: "btn btn-primary" do %>
                   <i class="far fa-edit"></i> Editar
                 <% end %> 
