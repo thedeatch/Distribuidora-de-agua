@@ -21,9 +21,12 @@ Rails.application.routes.draw do
   resources :clients
   resources :drivers
   resources :products
-  resources :orders
+  resources :orders #do 
+    #get 'cambiar_estado', :on => :member, :as => cambiar_estado
+  #end
   resources :trucks 
-  resources :drivers_trucks
+  resources :drivers_trucks 
+
 
   root 'static_pages#home'
   

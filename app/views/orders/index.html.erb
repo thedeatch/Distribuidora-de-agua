@@ -30,12 +30,12 @@
             <td><%= order.amount %></td>
             <td><%= order.client.rut %></td>
             <td><%= order.client.fullName %></td>
-            <td><%= order.truck.number_plate %></td>
+            <td><%= order.truck.fullModel %></td>
             <td><%= order.product.detail %></td> 
             <td><%= order.calcular_valor %> CLP</td>
             <td><%= link_to edit_order_path(order), class: "btn btn-primary" do %>
                   <i class="far fa-edit"></i> Editar
-                <% end %> 
+                <% end %>  
                 <% if can? :destroy, order %>                
 
                   <%= link_to order_path(order),

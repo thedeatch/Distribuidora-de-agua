@@ -5,25 +5,35 @@ class DriversTruck < ApplicationRecord
   accepts_nested_attributes_for :driver, :truck
 
   #validaciones
-
-  #validates :day, presence: true, uniqueness: { scope: [:driver_id, :truck_id] }  
-  validates :driver_id, uniqueness: { scope: :truck_id, message: "Conductor solo puede usar un vehiculo a la vez" }
-  validate :fecha_asignacion_pasado 
-  validate :fecha_asignacion_futuro    
+  validates_presence_of :beginning_date, :ending_date
+  #validates :driver_id, uniqueness: { scope: :truck_id, message: "Conductor solo puede usar un vehiculo a la vez" }
+  validate :fecha_asignacion_pasado, :fecha_asignacion_futuro, :validar_asignaciones_multiples
+       
 
 
   def fecha_asignacion_pasado 
-    if !day.blank? && day < Date.today 
-      errors.add(:day, "Fecha incorrecta, no se puede asignar al pasado") 
+    if !beginning_date.blank? && beginning_date < Date.today 
+      errors.add(:beginning_date, "Fecha incorrecta, no se puede asignar al pasado") 
     end 
   end
 
   def fecha_asignacion_futuro 
-    if !day.blank? && day > Date.today+30 
-      errors.add(:day, "Fecha incorrecta, no se puede asignar un camion despues de 30 dias")
+    if !beginning_date.blank? && beginning_date > Date.today+30 
+      errors.add(:beginning_date, "Fecha incorrecta, no se puede asignar un camion despues de 30 dias")
     end
   end  
 
+  def validar_asignaciones_multiples 
+
+    asignaciones = DriversTruck.all 
+    asignaciones.each do |asignacion| 
+      if beginning_date > asignacion.beginning_date && beginning_date < asignacion.ending_date 
+        errors.add(:beginning_date, " El vehiculo esta ocupado durante esas fechas") 
+      elsif ending_date > asignacion.beginning_date && ending_date < asignacion.ending_date 
+        errors.add(:beginning_date, " El vehiculo ya esta reservado hasta esta fecha ")
+      end 
+    end
+  end
 
 
 end

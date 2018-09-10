@@ -48,7 +48,7 @@
           <p>
           <%= f.label :Camión %>
             <p>
-            <%= f.collection_select :truck_id, Truck.all, :id, :number_plate, type: "button", data_toggle:"dropdown", include_blank: "Seleccione camión", class: "btn btn-mini dropdown toggle"%>
+            <%= f.collection_select :truck_id, Truck.all, :id, :fullModel, type: "button", data_toggle:"dropdown", include_blank: "Seleccione camión", class: "btn btn-mini dropdown toggle"%>
 
             </p>
           </p>

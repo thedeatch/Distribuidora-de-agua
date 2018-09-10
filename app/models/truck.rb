@@ -2,7 +2,7 @@ class Truck < ApplicationRecord
     has_many :orders, inverse_of: :truck
     has_many :products, through: :orders
     has_many :clients, through: :orders 
-    has_many :drivers_trucks
+    has_many :drivers_trucks, :dependent => :delete_all
     has_many :drivers, :through => :drivers_trucks
 
 
@@ -15,5 +15,9 @@ class Truck < ApplicationRecord
 
     def uppercase_numberplate
         self.number_plate.upcase!
+    end 
+
+    def fullModel
+      [name, number_plate].compact.join(' , ')
     end
 end
