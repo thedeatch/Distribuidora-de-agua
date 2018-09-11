@@ -7,7 +7,7 @@ class DriversTruck < ApplicationRecord
   #validaciones
   validates_presence_of :beginning_date, :ending_date
   #validates :driver_id, uniqueness: { scope: :truck_id, message: "Conductor solo puede usar un vehiculo a la vez" }
-  validate :fecha_asignacion_pasado, :fecha_asignacion_futuro, :validar_asignaciones_multiples
+  validate :fecha_asignacion_pasado, :fecha_asignacion_futuro
        
 
 
@@ -23,17 +23,17 @@ class DriversTruck < ApplicationRecord
     end
   end  
 
-  def validar_asignaciones_multiples 
+  #def validar_asignaciones_multiples 
 
-    asignaciones = DriversTruck.all 
-    asignaciones.each do |asignacion| 
-      if beginning_date > asignacion.beginning_date && beginning_date < asignacion.ending_date 
-        errors.add(:beginning_date, " El vehiculo esta ocupado durante esas fechas") 
-      elsif ending_date > asignacion.beginning_date && ending_date < asignacion.ending_date 
-        errors.add(:beginning_date, " El vehiculo ya esta reservado hasta esta fecha ")
-      end 
-    end
-  end
+    #asignaciones = DriversTruck.all 
+    #asignaciones.each do |asignacion| 
+      #if beginning_date > asignacion.beginning_date && beginning_date < asignacion.ending_date 
+        #errors.add(:beginning_date, " El vehiculo esta ocupado durante esas fechas") 
+      #elsif ending_date > asignacion.beginning_date && ending_date < asignacion.ending_date 
+        #errors.add(:beginning_date, " El vehiculo ya esta reservado hasta esta fecha ")
+      #end 
+    #end
+  #end
 
 
 end
