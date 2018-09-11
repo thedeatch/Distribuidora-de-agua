@@ -63,8 +63,8 @@ User.destroy_all
 
 User.create([ 
 
-	{ email: "esteban.lundin@gmail.com", password: "topsecret", password_confirmation: "topsecret", first_name: "esteban", last_name: "lundin"  }, 
-	{ email: "maximiliano.diaz@gmail.com", password: "topsecret", password_confirmation: "topsecret", first_name: "maximiliano", last_name: "diaz", role: "employee"  }
+	{ email: "esteban.lundin@gmail.com", password: "topsecret", password_confirmation: "topsecret", first_name: "esteban", last_name: "lundin", role: "admin"  }, 
+	{ email: "maximiliano.diaz@gmail.com", password: "topsecret", password_confirmation: "topsecret", first_name: "maximiliano", last_name: "diaz"  }
 
 ])
 
