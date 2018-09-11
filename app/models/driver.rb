@@ -1,6 +1,6 @@
 class Driver < ApplicationRecord
-    has_many :drivers_trucks
-    has_many :truck, :through => :drivers_trucks
+    has_many :drivers_trucks, :dependent => :delete_all
+    has_many :trucks, :through => :drivers_trucks
 
     #validaciones
 

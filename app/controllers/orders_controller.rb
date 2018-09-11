@@ -57,7 +57,13 @@ class OrdersController < ApplicationController
       flash[:error] = "Ha habido un error al eliminar el pedido, intente mas tarde" 
       redirect_to orders_path 
     end
-  end
+  end 
+
+  #def estado 
+
+    #@order = Order.find(params[:id]) 
+
+  #end
 
 
 
@@ -65,7 +71,7 @@ class OrdersController < ApplicationController
   private
     
     def order_params
-      params.require(:order).permit(:order_date, :delivery_date, :amount, :client_id, :truck_id, :product_id)
+      params.require(:order).permit(:order_date, :delivery_date, :amount, :client_id, :truck_id, :product_id, :state)
     end
 
 end

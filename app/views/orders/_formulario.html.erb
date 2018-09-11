@@ -16,15 +16,17 @@
               <% end %>
             </ul>
           <% end %>
-          <p>
+           <p>
             <%= f.label :Fecha_de_entrega %>
+          
+            <div class='input-group date' id='datetimepicker'>
+              <%= f.text_field :delivery_date, class: 'form-control', autocomplete: 'off' %>
+              <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+              </span>
+            </div>
 
-
-              <%= f.text_field :delivery_date, class: 'form-control datepicker', autocomplete: 'off', placeholder: 'DD-MM-AAAA' %>
-
-
-          </P>
-
+          </p>
 
           <p>
           <%= f.label :Producto %>
@@ -45,7 +47,7 @@
           <p>
           <%= f.label :Camión %>
             <p>
-            <%= f.collection_select :truck_id, Truck.all, :id, :number_plate, type: "button", data_toggle:"dropdown", include_blank: "Seleccione camión", class: "btn btn-mini dropdown toggle"%>
+            <%= f.collection_select :truck_id, Truck.all, :id, :fullModel, type: "button", data_toggle:"dropdown", include_blank: "Seleccione camión", class: "btn btn-mini dropdown toggle"%>
 
             </p>
           </p>

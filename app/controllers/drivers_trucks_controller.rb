@@ -39,7 +39,7 @@ class DriversTrucksController < ApplicationController
     @drivers_truck = DriversTruck.find(params[:id])
 
 
-    if @drivers_truck.update(driver_truck_params) 
+    if @drivers_truck.update(drivers_truck_params) 
       flash[:success] = "Se ha modificado la asignación" 
       redirect_to drivers_trucks_path 
     else 
@@ -65,7 +65,7 @@ class DriversTrucksController < ApplicationController
   private 
 
     def drivers_truck_params 
-      params.require(:drivers_truck).permit(:driver_id, :truck_id, :day)
+      params.require(:drivers_truck).permit(:driver_id, :truck_id, :beginning_date, :ending_date)
     end
 
 end

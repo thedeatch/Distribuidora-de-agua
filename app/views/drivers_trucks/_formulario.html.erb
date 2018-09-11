@@ -22,14 +22,22 @@
           <p>
           <%= f.label :Camión %>
             <p>
-            <%= f.collection_select :truck_id, Truck.all, :id, :number_plate, type: "button", include_blank: "Seleccione patente", class: "btn btn-default btn-sm dropdown-toggle" %>
+            <%= f.collection_select :truck_id, Truck.all, :id, :fullModel, type: "button", include_blank: "Seleccione vehiculo", class: "btn btn-default btn-sm dropdown-toggle" %>
             </p>
           </p>
 
           <p>
-          <%= f.label :Día %>
+          <%= f.label :Fecha_inicio %>
           <p>
-            <%= f.text_field :day, class: 'form-control datepicker', autocomplete: "off", placeholder: 'DD-MM-AAAA' %>
+            <%= f.text_field :beginning_date, class: 'form-control datepicker', autocomplete: "off", placeholder: 'DD-MM-AAAA' %>
+
+          </p>
+          </p>
+          <p> 
+          <p>
+          <%= f.label :Fecha_termino %>
+          <p>
+            <%= f.text_field :ending_date, class: 'form-control datepicker', autocomplete: "off", placeholder: 'DD-MM-AAAA' %>
 
           </p>
 

@@ -14,16 +14,18 @@ Rails.application.routes.draw do
   namespace :charts do  
     get "new-clients" 
     get "new-orders" 
-    get "income-orders"
+    get "income-orders" 
+    get "order-status"
   end
 
   resources :users
   resources :clients
   resources :drivers
   resources :products
-  resources :orders
+  resources :orders 
   resources :trucks 
-  resources :drivers_trucks
+  resources :drivers_trucks 
+
 
   root 'static_pages#home'
   

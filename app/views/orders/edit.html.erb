@@ -1,7 +1,69 @@
 <% provide(:title, "Modificar Pedido")%>
 <% provide(:path, edit_order_path(@order))%>
-<head>
-
-</head>
 <h1>Modificar Pedido</h1>
-<%= render 'formulario' %>
+<body>
+  <div class="row">
+    <div class="col-md-6">
+        <%= form_for [@client,@product,@order] do |f| %>
+
+
+
+          <% if @order.errors.any? %>
+            <ul class = "alert alert-warning">
+              <%= pluralize(@order.errors.count, "Errores") %>
+
+              <% @order.errors.full_messages.each do |error| %>
+
+                <li><%= error %></li>
+              <% end %>
+            </ul>
+          <% end %> 
+          <p>
+          <%= f.label :Estado_del_pedido %></br>
+          <%= f.select :state, options_for_select(['Pendiente', 'Realizado']), class: 'form-control' %>
+          </p>
+
+
+ 
+          <p>
+          <%= f.label :Fecha_de_entrega %>
+          <p>
+            <%= f.text_field :delivery_date, class: 'form-control datepicker', autocomplete: "off", placeholder: 'DD-MM-AAAA' %>
+
+          </p>
+          </p>
+
+
+
+          <p>
+          <%= f.label :Producto %>
+            <p>
+            <%= f.collection_select :product_id, Product.all, :id, :detail, type: "button", include_blank: "Seleccione producto", class: "btn btn-default btn-sm dropdown-toggle"%>
+            </p>
+          </p>
+          <p>
+          <%= f.label :Cantidad %>
+          <%= f.text_field :amount, class: 'form-control' , placeholder: 'Cantidad de producto'%>
+          </p>
+          <p>
+          <%= f.label :Cliente %>
+            <p>
+            <%= f.collection_select :client_id, Client.all, :id, :fullName, type: "button", include_blank: "Seleccione cliente", id: "simple-example"%>
+            </p>
+          </p>
+          <p>
+          <%= f.label :Camión %>
+            <p>
+            <%= f.collection_select :truck_id, Truck.all, :id, :fullModel, type: "button", data_toggle:"dropdown", include_blank: "Seleccione camión", class: "btn btn-mini dropdown toggle"%>
+
+            </p>
+          </p>
+          <p>
+          <%= f.submit "Aceptar", class: "btn btn-primary" %>
+          </p>
+        <% end %>
+
+
+    </div>
+
+</body>
