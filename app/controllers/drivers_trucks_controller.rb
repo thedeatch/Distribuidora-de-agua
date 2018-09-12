@@ -65,7 +65,7 @@ class DriversTrucksController < ApplicationController
   private 
 
     def drivers_truck_params 
-      params.require(:drivers_truck).permit(:driver_id, :truck_id, :beginning_date, :ending_date)
+      params.require(:drivers_truck).permit(:driver_id, :truck_id, :assignment_date)
     end
 
 end

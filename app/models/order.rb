@@ -16,6 +16,9 @@ class Order < ApplicationRecord
   validate :fecha_de_entrega_futuro
   validates :amount, presence: { message: "no puede estar en blanco" }, numericality: { only_integer: true , :message => "La cantidad no tiene formato valido"}
   validate :stock_negativo
+  validates :delivery_date, uniqueness: { scope: [:client_id, :truck_id] } 
+  validates :product_id, uniqueness: { scope: [:client_id] }     
+     
 
 
   def fecha_de_entrega_pasado

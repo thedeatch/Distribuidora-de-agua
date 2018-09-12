@@ -15,8 +15,7 @@
           <th>RUT Conductor</th>
           <th>Patente Camión</th>
           <th>Modelo</th> 
-          <th>Fecha Inicio</th>
-          <th>Fecha Termino</th>          
+          <th>Fecha asignacion</th>
           <th>Opciones</th>
 
 
@@ -29,8 +28,7 @@
             <td><%= drivers_truck.driver.rut %></td>
             <td><%= drivers_truck.truck.number_plate %></td>
             <td><%= drivers_truck.truck.name %></td>
-            <td><%= drivers_truck.beginning_date %></td> 
-            <td><%= drivers_truck.ending_date %></td>
+            <td><%= drivers_truck.assignment_date %></td> 
             <td><%= link_to edit_drivers_truck_path(drivers_truck), class: "btn btn-primary" do %>
                   <i class="far fa-edit"></i> Editar
                 <% end %> 

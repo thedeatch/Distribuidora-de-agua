@@ -27,19 +27,13 @@
           </p>
 
           <p>
-          <%= f.label :Fecha_inicio %>
+          <%= f.label :Fecha_asignacion %>
           <p>
-            <%= f.text_field :beginning_date, class: 'form-control datepicker', autocomplete: "off", placeholder: 'DD-MM-AAAA' %>
+            <%= f.text_field :assignment_date, class: 'form-control datepicker', autocomplete: "off", placeholder: 'DD-MM-AAAA' %>
 
           </p>
           </p>
-          <p> 
-          <p>
-          <%= f.label :Fecha_termino %>
-          <p>
-            <%= f.text_field :ending_date, class: 'form-control datepicker', autocomplete: "off", placeholder: 'DD-MM-AAAA' %>
-
-          </p>
+        
 
           <p>
           <%= f.submit "Aceptar", class: "btn btn-primary"%>
